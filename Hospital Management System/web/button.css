@@ -1,0 +1,70 @@
+.main_button{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+}
+
+.btn_patient{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background: #4169E1;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: 0;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.btn_receptionist{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background: #4169E1;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: 0;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.btn_doctor{
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    background: #4169E1;
+    width: 270px;
+    padding: 20px;
+    text-align: center;
+    text-decoration: 0;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property:  box-shadow, transform;
+    transition-property: box-shadow, transform;
+}
+
+.btn_doctor:hover, .btn_doctor:focus, .btn_doctor:active, .btn_patient:hover, .btn_patient:focus, .btn_patient:active,.btn_receptionist:hover, .btn_receptionist:focus, .btn_receptionist:active{
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
