@@ -1,6 +1,6 @@
 <%-- 
-    Document   : doctor
-    Created on : Apr 18, 2021, 11:28:54 AM
+    Document   : updateProfile
+    Created on : Apr 22, 2021, 12:37:14 PM
     Author     : azhar
 --%>
 
@@ -159,13 +159,13 @@ button{
         <div class="mainContainer">
             <div class="wrapper">
 		<div class="sidebar">
-			<h2>Doctor</h2>
+			<h2>Update Profile</h2>
 			<ul>
-				<li><a href="doctor/updateProfile.jsp"><i class="fas fa-pen-alt"></i>Update Profile</a></li>
-                                <li><a href="doctor/viewAppointment.jsp"><i class="far fa-calendar-check"></i> View Appointment</a></li>
-                                <li><a href="doctor/viewPatient.jsp"><i class="fas fa-user-injured"></i>View Patient</a></li>
-                                <li><a href="doctor/viewRoom.jsp"><i class="fas fa-hospital-alt"></i>View Room</a></li>
-                                <li><a href="doctor/dischargePatient.jsp"><i class="fas fa-eject"></i>Discharge Patient</a></li>
+				<li><a href="updateProfile.jsp"><i class="fas fa-pen-alt"></i>Update Profile</a></li>
+                                <li><a href="viewAppointment.jsp"><i class="far fa-calendar-check"></i> View Appointment</a></li>
+                                <li><a href="viewPatient.jsp"><i class="fas fa-user-injured"></i>View Patient</a></li>
+                                <li><a href="viewRoom.jsp"><i class="fas fa-hospital-alt"></i>View Room</a></li>
+                                <li><a href="dischargePatient.jsp"><i class="fas fa-eject"></i>Discharge Patient</a></li>
 			</ul>
 		</div>
 		<div class="main_content">
