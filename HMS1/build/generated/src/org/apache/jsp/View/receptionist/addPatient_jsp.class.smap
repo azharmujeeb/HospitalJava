@@ -1,0 +1,10 @@
+SMAP
+addPatient_jsp.java
+JSP
+*S JSP
+*F
++ 0 addPatient.jsp
+View/receptionist/addPatient.jsp
+*L
+5,199:44
+*E
