@@ -82,7 +82,7 @@ button{
                             <div class="info">
                                     <div class="sign-up-form">
                                             <h1>Doctor Login</h1>
-                                            <form id="loginForm" onclick="doctor.jsp">
+                                            <form id="loginForm" method="">
                                                     <input type="text" class="input-box" id="loginId" placeholder="Login Id">
                                                     <input type="password" class="input-box" id="pass" placeholder="Enter your password">
                                                     <p><span><input type="checkbox"></span> I agree to the terms and conditions.</p>

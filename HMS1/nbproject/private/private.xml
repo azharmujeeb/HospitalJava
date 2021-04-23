@@ -3,18 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/viewAppointment.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/addDoctor.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/updateRoom.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/billing.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/updateDoctor.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/addPatient.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/patientReport.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/updatePatient.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/doctorInfo.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/patientInfo.jsp</file>
-            <file>file:/E:/GitHub/Ceylon%20Hospital/HMS1/web/View/receptionist/addRoom.jsp</file>
+            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/addPatient.jsp</file>
+            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/patientReport.jsp</file>
         </group>
     </open-files>
 </project-private>

@@ -275,12 +275,7 @@ form textarea{
 <li><a href="#"   ONCLICK="window.location.href='index2.html'"><b><u>GO BACK</u></b></a></li>
 </ul>
 </div>   
-     
-  </section>
 
-  
-   
-  
-      
+  </section>
     </body>
 </html>

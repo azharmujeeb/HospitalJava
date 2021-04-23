@@ -1,6 +1,6 @@
 <%-- 
-    Document   : patient
-    Created on : Apr 18, 2021, 11:23:47 AM
+    Document   : cancelAppoinment
+    Created on : Apr 22, 2021, 7:00:34 PM
     Author     : azhar
 --%>
 
@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Update Doctor</title>
+        <title>Cancel Appointment</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
@@ -144,7 +144,7 @@ button{
 	background-color: #4b4276;
 	color: white;
 	font-weight: bold;
-	width: 100%;
+	width: 68%;
 	padding: 10px;
 	border-radius: 20px;
 	font-size: 19px;
@@ -159,18 +159,36 @@ button{
         <div class="mainContainer">
             <div class="wrapper">
 		<div class="sidebar">
-			<h2>Patient</h2>
+			<h2>Cancel Appointment</h2>
 			<ul>
-                                <li><a href="patient/viewAppointment.jsp"><i class="fas fa-calendar-check"></i>View Appointment</a></li>
-				<li><a href="patient/appointment.jsp"><i class="fas fa-book-medical"></i>Book Appointment</a></li>
-                                <li><a href="patient/cancelAppointment.jsp"><i class="fas fa-window-close"></i>Cancel Appointment</a></li>
-                                <li><a href="patient/feedback.jsp"><i class="fas fa-comments"></i>Feedback</a></li>
+                                <li><a href="viewAppoinment.jsp"><i class="fas fa-calendar-check"></i>View Appointment</a></li>
+				<li><a href="appointment.jsp"><i class="fas fa-book-medical"></i>Book Appointment</a></li>
+                                <li><a href="cancelAppointment.jsp"><i class="fas fa-window-close"></i>Cancel Appointment</a></li>
+                                <li><a href="feedback.jsp"><i class="fas fa-comments"></i>Feedback</a></li>
 			</ul>
 		</div>
 		<div class="main_content">
                     <div class="info">
                         <div class="sign-up-form">
-                            <h1>Welcome Patient</h1>
+                            <h1>Cancel Appointment</h1>
+                            <form id="loginForm" accept="#">
+                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
+                                <input type="text" class="input-box" id="fname" placeholder="Full Name">
+                                <input type="text" class="input-box" id="age" placeholder="Age">
+                                <input type="number" class="input-box" id="mobileNumber" placeholder="Mobile Number">
+                                <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
+                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box">
+                                    <option>Category</option>
+                                    <option value="Bone">Bone</option>
+                                    <option value="Heart">Heart</option>
+                                    <option value="Dentistry">Dentistry</option>
+                                    <option value="mental">Mental Health</option>
+                                    <option value="Surgery">Surgery</option>
+                                </select>
+                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')">
+                                <button type="button" id="addDoctor" class="signup-btn">Book Appointment</button>
+                            </form>
                         </div>
                     </div>
 		</div>
