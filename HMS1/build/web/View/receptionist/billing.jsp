@@ -195,7 +195,7 @@ hr {
                                 <input type="number" class="input-box" id="days" placeholder="Number of Days Stayed">
                                 <input type="text" class="input-box" id="roomType" placeholder="Room Type">
                                 <input type="number" class="input-box" id="medicineFees" placeholder="Medicine Fees">
-                                <button type="buttom" id="doneBilling" class="signup-btn">Bill</button>
+                                <button type="button" id="doneBilling" class="signup-btn">Bill</button>
                             </form>
 			</div>
                     </div>

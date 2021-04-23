@@ -191,7 +191,7 @@ button{
                                 <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
                                 <input type="text" class="input-box" id="dateJoined" placeholder="Date Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="buttom" id="addDoctor" class="signup-btn">Add Doctor</button>
+                                <button type="button" id="addDoctor" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>
                     </div>

@@ -130,6 +130,10 @@ body{
 	font-weight: bold;
         font-size: 19px
 }
+select{
+    color: grey;
+    padding-right: 20px;
+}
 
 h1{
 	margin-top: 20px;
@@ -179,19 +183,26 @@ button{
                         <div class="sign-up-form">
                             <h1>Add Room</h1>
                             <form id="loginForm" accept="#">
-                                <input type="text" class="input-box" id="fname" placeholder="Full Name">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <input type="password" class="input-box" id="password" placeholder="Enter Password">
-                                <input type="text" class="input-box" id="address" placeholder="Address">
-                                <input type="text" class="input-box" id="age" placeholder="Age">
-                                <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                <input type="text" class="input-box" id="gender" placeholder="Gender">
-                                <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
-                                <input type="text" class="input-box" id="dateOfBirth" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
-                                <input type="text" class="input-box" id="dateJoined" placeholder="Date Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="buttom" id="addPatient" class="signup-btn">Add Doctor</button>
+                                <input type="text" class="input-box" id="pname" placeholder="Patient Name">
+                                <input type="text" class="input-box" id="dname" placeholder="Doctor Name">
+                                <select name="typeOfSickness" name="typeOfSickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;">
+                                    <option>Type Of Sickness</option>
+                                    <option value="allergies">Allergies</option>
+                                    <option value="coldAndFlu">Colds and Flu</option>
+                                    <option value="conjuctivitis">Conjunctivitis</option>
+                                    <option value="diarrhea">Diarrhea</option>
+                                    <option value="headaches">Headaches</option>
+                                    <option value="stomachAches">Stomach Aches</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <select name="typeOfRoom" name="typeOfRoom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px;">
+                                    <option>Type Of Room</option>
+                                    <option value="vip">VIP Room</option>
+                                    <option value="normal">Normal Room</option>
+                                    <option value="doubleRoom">Double Room</option>
+                                </select>
+                                <input type="text" class="input-box" id="roomJoined" placeholder="Room Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <button type="button" id="addPatient" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>
                     </div>

@@ -184,7 +184,7 @@ button{
                                     <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
                                     <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
                                     <input type="text" class="input-box" id="deceased" placeholder="Deceased">
-                                    <button type="buttom" id="updatePatient" class="signup-btn">Update Patient</button>
+                                    <button type="button" id="updatePatient" class="signup-btn">Update Patient</button>
                             </form>
                         </div>
                     </div>

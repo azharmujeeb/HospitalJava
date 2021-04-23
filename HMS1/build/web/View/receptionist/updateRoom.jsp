@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Receptionist</title>
+        <title>Update Room</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
@@ -96,6 +96,68 @@ body{
 	margin-bottom: 20px;
 }
         </style>
+                <style id="main_content">
+        .main_content{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: rgb(243,245,249);
+}
+
+.sign-up-form{
+	width: 500px;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+	background: #fff;
+	padding: 50px;
+	margin: auto;
+	text-align: center;
+	background-color: white;
+}
+
+.sign-up-form h1{
+	color: #4b4276;
+	margin-bottom: 30px;
+}
+
+.input-box{
+    background-color: rgb(243,245,249);
+	border-radius: 20px;
+	padding: 8px;
+	margin: 5px 0;
+	width: 100%;
+	border: 1px solid #999;
+	outline: none;
+	font-weight: bold;
+        font-size: 19px
+}
+
+select{
+    color: grey;
+}
+
+h1{
+	margin-top: 20px;
+}
+
+::placeholder{
+	color: 4b4276;
+        text-align: center;
+}
+
+button{
+	background-color: #4b4276;
+	color: white;
+	font-weight: bold;
+	width: 100%;
+	padding: 10px;
+	border-radius: 20px;
+	font-size: 19px;
+	margin: 14px 0;
+	border: none;
+	outline: none;
+	cursor: pointer;
+}
+        </style>
     </head>
     <body>
         <div class="mainContainer">
@@ -117,7 +179,33 @@ body{
 			</ul>
 		</div>
 		<div class="main_content">
-			
+                    <div class="info">
+                        <div class="sign-up-form">
+                            <h1>Update Room</h1>
+                            <form id="loginForm" accept="#">
+                                <input type="text" class="input-box" id="pname" placeholder="Patient Name">
+                                <input type="text" class="input-box" id="dname" placeholder="Doctor Name">
+                                <select name="typeOfSickness" name="typeOfSickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;">
+                                    <option>Type Of Sickness</option>
+                                    <option value="allergies">Allergies</option>
+                                    <option value="coldAndFlu">Colds and Flu</option>
+                                    <option value="conjuctivitis">Conjunctivitis</option>
+                                    <option value="diarrhea">Diarrhea</option>
+                                    <option value="headaches">Headaches</option>
+                                    <option value="stomachAches">Stomach Aches</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <select name="typeOfRoom" name="typeOfRoom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px;">
+                                    <option>Type Of Room</option>
+                                    <option value="vip">VIP Room</option>
+                                    <option value="normal">Normal Room</option>
+                                    <option value="doubleRoom">Double Room</option>
+                                </select>
+                                <input type="text" class="input-box" id="roomJoined" placeholder="Room Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <button type="button" id="updateRoom" class="signup-btn">Update Room</button>
+                            </form>
+                        </div>
+                    </div>
 		</div>
             </div>
         </div>

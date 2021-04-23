@@ -1,0 +1,10 @@
+SMAP
+dischargePatient_jsp.java
+JSP
+*S JSP
+*F
++ 0 dischargePatient.jsp
+View/doctor/dischargePatient.jsp
+*L
+5,181:44
+*E

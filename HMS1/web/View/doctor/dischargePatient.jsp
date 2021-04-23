@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Update Doctor</title>
+        <title>Discharge Patient</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
@@ -171,7 +171,11 @@ button{
 		<div class="main_content">
                     <div class="info">
                         <div class="sign-up-form">
-                            <h1>Welcome Doctor</h1>
+                            <h1>Discharge Patient</h1>
+                            <form id="loginForm" accept="#">
+                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
+                                <button type="button" id="dischargePatient" class="signup-btn">Discharge Patient</button>
+                            </form>
                         </div>
                     </div>
 		</div>

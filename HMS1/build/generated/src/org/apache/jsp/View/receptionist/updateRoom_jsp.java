@@ -1,10 +1,10 @@
-package org.apache.jsp.View;
+package org.apache.jsp.View.receptionist;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class patient_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class updateRoom_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -47,7 +47,7 @@ public final class patient_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Update Doctor</title>\n");
+      out.write("        <title>Update Room</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -135,7 +135,7 @@ public final class patient_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tmargin-bottom: 20px;\n");
       out.write("}\n");
       out.write("        </style>\n");
-      out.write("        <style id=\"main_content\">\n");
+      out.write("                <style id=\"main_content\">\n");
       out.write("        .main_content{\n");
       out.write("\tmargin: 0;\n");
       out.write("\tpadding: 0;\n");
@@ -170,6 +170,10 @@ public final class patient_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        font-size: 19px\n");
       out.write("}\n");
       out.write("\n");
+      out.write("select{\n");
+      out.write("    color: grey;\n");
+      out.write("}\n");
+      out.write("\n");
       out.write("h1{\n");
       out.write("\tmargin-top: 20px;\n");
       out.write("}\n");
@@ -198,25 +202,54 @@ public final class patient_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"mainContainer\">\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("\t\t<div class=\"sidebar\">\n");
-      out.write("\t\t\t<h2>Patient</h2>\n");
+      out.write("\t\t\t<h2>Update Room</h2>\n");
       out.write("\t\t\t<ul>\n");
-      out.write("                                <li><a href=\"patient/viewAppointment.jsp\"><i class=\"fas fa-calendar-check\"></i>View Appointment</a></li>\n");
-      out.write("\t\t\t\t<li><a href=\"patient/appointment.jsp\"><i class=\"fas fa-book-medical\"></i>Book Appointment</a></li>\n");
-      out.write("                                <li><a href=\"patient/cancelAppointment.jsp\"><i class=\"fas fa-window-close\"></i>Cancel Appointment</a></li>\n");
-      out.write("                                <li><a href=\"patient/feedback.jsp\"><i class=\"fas fa-comments\"></i>Feedback</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"addPatient.jsp\"><i class=\"fas fa-user-plus\"></i> Add Patient</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"patientInfo.jsp\"><i class=\"fas fa-users\"></i> Patient Information</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"updatePatient.jsp\"><i class=\"fas fa-pen\"></i> Update Patient</a></li>\n");
+      out.write("                                <li><a href=\"addDoctor.jsp\"><i class=\"fas fa-user-nurse\"></i> Add Doctor</a></li>\n");
+      out.write("                                <li><a href=\"updateDoctor.jsp\"><i class=\"fas fa-pen\"></i> Update Doctor</a></li>\n");
+      out.write("                                <li><a href=\"doctorInfo.jsp\"><i class=\"fas fa-users\"></i>Doctor Information</a></li>\n");
+      out.write("                                <li><a href=\"viewAppointment.jsp\"><i class=\"fas fa-file-invoice\"></i> View Appointment</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"addRoom.jsp\"><i class=\"fas fa-hospital\"></i> Add Room</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"updateRoom.jsp\"><i class=\"fas fa-pen\"></i> Update Room</a></li>\n");
+      out.write("                                <li><a href=\"billing.jsp\"><i class=\"fas fa-money-bill\"></i> Billing</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"patientReport.jsp\"><i class=\"fas fa-file-invoice\"></i> Patient Report</a></li>\n");
       out.write("\t\t\t</ul>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
-      out.write("                            <h1>Welcome Patient</h1>\n");
+      out.write("                            <h1>Update Room</h1>\n");
+      out.write("                            <form id=\"loginForm\" accept=\"#\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"pname\" placeholder=\"Patient Name\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"dname\" placeholder=\"Doctor Name\">\n");
+      out.write("                                <select name=\"typeOfSickness\" name=\"typeOfSickness\" id=\"typeOfSickness\" placeholder=\"Type Of Sickness\" class=\"input-box\" style=\"padding-left :130px;\">\n");
+      out.write("                                    <option>Type Of Sickness</option>\n");
+      out.write("                                    <option value=\"allergies\">Allergies</option>\n");
+      out.write("                                    <option value=\"coldAndFlu\">Colds and Flu</option>\n");
+      out.write("                                    <option value=\"conjuctivitis\">Conjunctivitis</option>\n");
+      out.write("                                    <option value=\"diarrhea\">Diarrhea</option>\n");
+      out.write("                                    <option value=\"headaches\">Headaches</option>\n");
+      out.write("                                    <option value=\"stomachAches\">Stomach Aches</option>\n");
+      out.write("                                    <option value=\"other\">Other</option>\n");
+      out.write("                                </select>\n");
+      out.write("                                <select name=\"typeOfRoom\" name=\"typeOfRoom\" id=\"typeOfRom\" placeholder=\"Type Of Room\" class=\"input-box\" style=\"padding-left :140px;\">\n");
+      out.write("                                    <option>Type Of Room</option>\n");
+      out.write("                                    <option value=\"vip\">VIP Room</option>\n");
+      out.write("                                    <option value=\"normal\">Normal Room</option>\n");
+      out.write("                                    <option value=\"doubleRoom\">Double Room</option>\n");
+      out.write("                                </select>\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"roomJoined\" placeholder=\"Room Joined\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">\n");
+      out.write("                                <button type=\"button\" id=\"updateRoom\" class=\"signup-btn\">Update Room</button>\n");
+      out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\t\t</div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

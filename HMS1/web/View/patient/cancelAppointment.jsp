@@ -173,21 +173,7 @@ button{
                             <h1>Cancel Appointment</h1>
                             <form id="loginForm" accept="#">
                                 <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <input type="text" class="input-box" id="fname" placeholder="Full Name">
-                                <input type="text" class="input-box" id="age" placeholder="Age">
-                                <input type="number" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
-                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box">
-                                    <option>Category</option>
-                                    <option value="Bone">Bone</option>
-                                    <option value="Heart">Heart</option>
-                                    <option value="Dentistry">Dentistry</option>
-                                    <option value="mental">Mental Health</option>
-                                    <option value="Surgery">Surgery</option>
-                                </select>
-                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')">
-                                <button type="button" id="addDoctor" class="signup-btn">Book Appointment</button>
+                                <button type="button" id="cancelAppointment" class="signup-btn">Cancel Appointment</button>
                             </form>
                         </div>
                     </div>

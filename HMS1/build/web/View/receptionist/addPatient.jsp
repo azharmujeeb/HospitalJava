@@ -191,7 +191,7 @@ button{
                                     <input type="text" class="input-box" id="gender" placeholder="Gender">
                                     <input type="text" class="input-box" id="dateOfBirth" placeholder="Date Of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
                                     <input type="text" class="input-box" id="deceased" placeholder="Deceased">
-                                    <button type="buttom" id="addPatient" class="signup-btn">Add Patient</button>
+                                    <button type="button" id="addPatient" class="signup-btn">Add Patient</button>
 				</form>
 			</div>
                     </div>

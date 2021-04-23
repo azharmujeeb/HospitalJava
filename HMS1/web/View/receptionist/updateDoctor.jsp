@@ -185,7 +185,7 @@ button{
                                 <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
                                 <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
                                 <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="buttom" id="updateDoctor" class="signup-btn">Update Doctor</button>
+                                <button type="button" id="updateDoctor" class="signup-btn">Update Doctor</button>
                             </form>
                         </div>
                     </div>

@@ -177,7 +177,7 @@ button{
                                 <input type="text" class="input-box" id="age" placeholder="Age">
                                 <input type="number" class="input-box" id="mobileNumber" placeholder="Mobile Number">
                                 <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
-                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box">
+                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box" style="padding-left: 150px">
                                     <option>Category</option>
                                     <option value="bone">Bone</option>
                                     <option value="deart">Heart</option>
@@ -185,8 +185,8 @@ button{
                                     <option value="mental">Mental Health</option>
                                     <option value="surgery">Surgery</option>
                                 </select>
-                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')">
+                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="text-align: center;">
+                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')" style="text-align: center;">
                                 <button type="button" id="addDoctor" class="signup-btn">Book Appointment</button>
                             </form>
                         </div>
