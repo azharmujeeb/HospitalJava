@@ -177,16 +177,18 @@ button{
                                 <input type="text" class="input-box" id="age" placeholder="Age">
                                 <input type="number" class="input-box" id="mobileNumber" placeholder="Mobile Number">
                                 <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
-                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box" style="padding-left: 150px">
-                                    <option>Category</option>
-                                    <option value="bone">Bone</option>
-                                    <option value="deart">Heart</option>
-                                    <option value="dentistry">Dentistry</option>
-                                    <option value="mental">Mental Health</option>
-                                    <option value="surgery">Surgery</option>
+                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box" style="padding-left: 150px; color: grey;">
+                                    <option>Type of Sickness</option>
+                                    <option value="allergies">Allergies</option>
+                                    <option value="coldAndFlu">Colds and Flu</option>
+                                    <option value="conjuctivitis">Conjunctivitis</option>
+                                    <option value="diarrhea">Diarrhea</option>
+                                    <option value="headaches">Headaches</option>
+                                    <option value="stomachAches">Stomach Aches</option>
+                                    <option value="other">Other</option>
                                 </select>
-                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="text-align: center;">
-                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')" style="text-align: center;">
+                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="text-align: center; color: grey;">
+                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')" style="text-align: center; color: grey;">
                                 <button type="button" id="addDoctor" class="signup-btn">Book Appointment</button>
                             </form>
                         </div>

@@ -339,7 +339,7 @@ form textarea{
                                            <input type="email" id="email" name="email"><br><br>
                                            <h5>PHONE</h5>
                                            <input type="number" id="number"name="number"><br><br>
-                                           <h5>YOUR MESSAGE</h5>
+                                           <h5>YOUR COMMENTS</h5>
                                            <textarea name="msg" id="msg" name="msg" cols="50" rows="7"></textarea><br>
                                            <input type="submit" class="button" name="submit" id="submit" value="Send">
 
