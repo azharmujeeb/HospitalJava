@@ -178,7 +178,7 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Doctor</h1>
-                            <form id="loginForm" method="post">
+                            <form id="loginForm" method="post" action="Add_Doctor">
                                 <input type="text" class="input-box" id="fname" placeholder="Full Name">
                                 <input type="text" class="input-box" id="loginId" placeholder="Login ID">
                                 <input type="password" class="input-box" id="password" placeholder="Enter Password">
@@ -190,8 +190,7 @@ button{
                                 <input type="text" class="input-box" id="dateOfBirth" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
                                 <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
                                 <input type="text" class="input-box" id="dateJoined" placeholder="Date Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="button" id="addDoctor" class="signup-btn">Add Doctor</button>
+                                <button type="submit" id="addDoctor" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>
                     </div>

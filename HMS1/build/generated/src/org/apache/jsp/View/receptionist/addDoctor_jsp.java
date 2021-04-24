@@ -217,7 +217,7 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
       out.write("                            <h1>Add Doctor</h1>\n");
-      out.write("                            <form id=\"loginForm\" method=\"post\">\n");
+      out.write("                            <form id=\"loginForm\" method=\"post\" action=\"Add_Doctor\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"fname\" placeholder=\"Full Name\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"loginId\" placeholder=\"Login ID\">\n");
       out.write("                                <input type=\"password\" class=\"input-box\" id=\"password\" placeholder=\"Enter Password\">\n");
@@ -229,8 +229,7 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"dateOfBirth\" placeholder=\"Date of Birth\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"qualification\" placeholder=\"Qaulification\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"dateJoined\" placeholder=\"Date Joined\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">\n");
-      out.write("                                <!--<input type=\"text\" class=\"input-box\" id=\"\" placeholder=\"\">-->\n");
-      out.write("                                <button type=\"button\" id=\"addDoctor\" class=\"signup-btn\">Add Doctor</button>\n");
+      out.write("                                <button type=\"submit\" id=\"addDoctor\" class=\"signup-btn\">Add Doctor</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
