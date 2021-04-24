@@ -178,7 +178,7 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Doctor</h1>
-                            <form id="loginForm" accept="#">
+                            <form id="loginForm" method="post">
                                 <input type="text" class="input-box" id="fname" placeholder="Full Name">
                                 <input type="text" class="input-box" id="loginId" placeholder="Login ID">
                                 <input type="password" class="input-box" id="password" placeholder="Enter Password">
