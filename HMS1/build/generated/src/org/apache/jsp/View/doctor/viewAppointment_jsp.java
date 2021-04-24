@@ -3,6 +3,10 @@ package org.apache.jsp.View.doctor;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.Connection;
 
 public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -44,10 +48,14 @@ public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("\n");
       out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Update Doctor</title>\n");
+      out.write("        <title>View Appointment</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -210,7 +218,71 @@ public final class viewAppointment_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
-      out.write("                            <h1>Welcome Doctor</h1>\n");
+      out.write("                            <form method=\"get\" >\n");
+      out.write("                                    <center>\n");
+      out.write("                                        <div class=\"filter\"></div>\n");
+      out.write("                                       <table class=\"table\" >\n");
+      out.write("                                           <th>Login ID</th>\n");
+      out.write("                                           <th>Full Name</th>\n");
+      out.write("                                           <th>Age</th>\n");
+      out.write("                                           <th>Mobile Number</th>\n");
+      out.write("                                           <th>Blood Group</th>\n");
+      out.write("                                           <th>Type of Sickness</th>\n");
+      out.write("                                           <th>Appointment Date</th>\n");
+      out.write("                                           <th>Appointment Time</th>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("                                        ");
+    
+                                      try{
+                                         Class.forName("com.mysql.jdbc.Driver");
+                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                         Statement stat = con.createStatement();
+                                         
+                                         String sqlstr = "select * from appointment";
+                                         ResultSet rs = stat.executeQuery(sqlstr);
+                                         while(rs.next()){
+
+                                         
+      out.write("\n");
+      out.write("                                             <tr>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("loginid"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("fullname"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getInt("age"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getInt("mobilenumber"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("bloodgroup"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("typeofsickness"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("appointmentdate"));
+      out.write("</td>\n");
+      out.write("                                                 <td>");
+      out.print(rs.getString("appointmenttime"));
+      out.write("</td>\n");
+      out.write("                                             </tr>\n");
+      out.write("                                       ");
+      
+                                         }
+                            }
+                                         catch(Exception e){
+                                                 System.out.println(e.getMessage());
+                                                 }
+                                 
+      out.write("   \n");
+      out.write("                                       </table>                                                                 \n");
+      out.write("                                     </center>  \n");
+      out.write("                                </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\t\t</div>\n");

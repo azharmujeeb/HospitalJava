@@ -109,7 +109,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     background:#4b4276;
-    max-width: 600px;
+    max-width: 750px;
     max-height: 60px;
     width: 100%;
     padding: 10px;
@@ -120,20 +120,29 @@ body{
 
 .wrapper2 .input {
     width: 85%;
-    padding: 0;
+    padding-left: 15px ;
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    font-size: 18px;
 }
 
 .searchbtn .fas{
     position: absolute;
-
     transform: translate(-50%, -50%);
     font-size: 18px;
 }
 
-
+button{
+    background-color: #e1dbff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 35px;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
 /*button{
 	background-color: #e1dbff;
@@ -264,7 +273,8 @@ h2{
                         <div class="wrapper2">
                             <input type="text" class="input" name="idnumber" id ="idnumber"  placeholder="Type Your ID Number......">
                             <div class="searchbtn">
-                                <button type="button" id="addDoctor" class="input">Search</button>
+                                <button type="button" id="searchbtn" class="btn">Search</button>
+                                <!--Dilhani's btn <input type="submit" name="submit" value="Search" class="box"  style="color: black">-->
                             </div>
                         </div>
 			<div class="sign-up-form">
