@@ -273,30 +273,28 @@ h2{
                         <div class="sign-up-form">
                             <form method="get" >
                                     <center>
-                                        <div class="filter"></div>
                                        <table class="table" >
-                                           <th>Login ID</th>
-                                           <th>Full Name</th>
-                                           <th>Age</th>
-                                           <th>Mobile Number</th>
-                                           <th>Blood Group</th>
-                                           <th>Type of Sickness</th>
-                                           <th>Appointment Date</th>
-                                           <th>Appointment Time</th>
-
-
+                                        <tr>
+                                            <th>Login ID</th>
+                                            <th>Full Name</th>
+                                            <th>Age</th>
+                                            <th>Mobile Number</th>
+                                            <th>Blood Group</th>
+                                            <th>Type of Sickness</th>
+                                            <th>Appointment Date</th>
+                                            <th>Appointment Time</th>
+                                        </tr>
+                                        
                                         <%    
-                                      try{
-                                         Class.forName("com.mysql.jdbc.Driver");
-                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
-                                         Statement stat = con.createStatement();
-                                         
-                                         String sqlstr = "select * from appointment";
-                                         ResultSet rs = stat.executeQuery(sqlstr);
-                                         while(rs.next()){
-
-                                         %>
-                                             <tr>
+                                            try{
+                                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                String query = "Select * from appointment ORDER BY appointmentdate ASC";
+                                                Statement stat = con.createStatement();
+                                                ResultSet rs = stat.executeQuery(query);
+                                                while(rs.next()){
+                                        %>
+                                        <tr>
                                                  <td><%=rs.getString("loginid")%></td>
                                                  <td><%=rs.getString("fullname")%></td>
                                                  <td><%=rs.getInt("age")%></td>
@@ -304,15 +302,15 @@ h2{
                                                  <td><%=rs.getString("bloodgroup")%></td>
                                                  <td><%=rs.getString("typeofsickness")%></td>
                                                  <td><%=rs.getString("appointmentdate")%></td>
-                                                 <td><%=rs.getString("appointmenttime")%></td>
-                                             </tr>
-                                       <%      
-                                         }
-                            }
-                                         catch(Exception e){
+                                                 <td><%=rs.getString("appointmnettime")%></td>
+                                        </tr>
+                                        <%      
+                                            }
+                                        }catch(Exception e){
                                                  System.out.println(e.getMessage());
-                                                 }
-                                 %>   
+                                            }
+                                        %>
+                                        
                                        </table>                                                                 
                                      </center>  
                                 </form>
