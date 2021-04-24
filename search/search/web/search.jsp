@@ -1,6 +1,6 @@
 <%-- 
-    Document   : viewappointment1
-    Created on : Apr 4, 2021, 11:01:08 AM
+    Document   : search
+    Created on : Apr 23, 2021, 5:07:54 PM
     Author     : User
 --%>
 
@@ -16,11 +16,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>View Appointment</title>
-        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">  
+          
+      
         <style>
-            
-            
-body{   background: url("https://media.istockphoto.com/photos/black-stethoscope-on-blue-background-picture-id1179610553?k=6&m=1179610553&s=612x612&w=0&h=v6Wj8AcJx6YppS-ulxEx_g4dihKHCFQv3qEht7aLIOE=");
+         @import url('https://fonts.googleapis.com/css?family=Comfortaa');   
+body{   
 	margin:0;
 	padding:20px;
 	font-family: sans-serif;
@@ -33,9 +34,9 @@ body{   background: url("https://media.istockphoto.com/photos/black-stethoscope-
 .table{
 	width: 100%;
 	border-collapse: collapse;
-        top: 45%;
+        top: 50%;
+        
 }
-
 .table td,.table th{
   padding:12px 15px;
   border:1px solid #ddd;
@@ -51,9 +52,6 @@ body{   background: url("https://media.istockphoto.com/photos/black-stethoscope-
 .table tbody tr:nth-child(even){
 	background-color: #f5f5f5;
 }
-
-
-
 @media(max-width: 500px){
 	.table thead{
 		display: none;
@@ -87,10 +85,6 @@ body{   background: url("https://media.istockphoto.com/photos/black-stethoscope-
 h2{
     color:#6A5ACD;
 }
-
-
-
-
 .nav-area {
        text-align:right;
 	}
@@ -123,11 +117,194 @@ h2{
 	color: #333;
 }
 
+
+
+<%--
+Search 
+--%>
+
+
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-family: 'Comfortaa', cursive;
+}
+
+body{
+	
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+
+.wrapper{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0,0.6);
+    max-width: 700px;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+
+.wrapper .input {
+    width: 85%;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.searchbtn .fas{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+
+
+ .box{
+            width: 96px;
+            padding: 13px;
+            position: absolute;
+            top: 50%;
+            left:92%;
+            transform: translate(-50%,-50%);
+            background: white;
+            text-align: center;
+            opacity: 0.7;
+            font-weight: bold;
+           }
+        .box h1{
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+             }  
+        
+         .box input[type = "submit"]{
+             border:0;
+             background: none;
+             display: block;
+             margin: 20px auto;
+             text-align: center;
+             border: 2px solid #2ecc71;
+             padding: 14px 40px;
+             outline: none;
+             color: white;
+             border-radius: 24px;
+             transition: 0.25s;
+             cursor: pointer;
+             }
+        .box input[type = "submit"]:hover{
+             background: #2ecc71;
+             }
+             
+             
+             
+  
+ .nav-area {
+       text-align:right;
+	}
+ .nav-area li a {
+		padding: 5px;
+		font-size: 15px;
+	}
+ .nav-area {
+		float: none;
+		margin-top: 0; 
+	}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color:#0000CD;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: #fff;
+	color: #333;
+}
+
+
+
+.h1{
+        height: auto;
+	color: #fff;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	font-size: 5.5em;
+	font-weight: 750;
+        
+}
+
+.p{
+        font-weight: bold;
+        height: auto;
+	color: #ccc;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+	font-size: 1.2em;
+	font-weight: 500;
+}
+.info{
+        font-family: sans-serif;
+        font-weight: bold;
+        position: absolute;
+	top: 30%;
+	transform: translateY(-50%);
+	height: auto;
+	width: 100%;
+	z-index: 1;
+	text-align: center;
+}            
+             
             
         </style>
     </head>
     <body>
-        <h2>Your Appointment Detail is ...</h2>
+        
+           
+        <form>
+   
+   <div class="wrapper">
+	<input type="text" class="input" name="idnumber" id ="idnumber"  placeholder="Type Your ID Number......">
+        <div class="searchbtn">
+        <input type="submit" name="submit" value="Search" class="box"  style="color: black">
+        </div>
+   </div>          
+        </form>  
+        
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        
         <form method="get" >
         <center>
             <div class="filter"></div>
@@ -146,7 +323,7 @@ h2{
        
           try{
              Class.forName("com.mysql.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/patien","root","");
              Statement stat = con.createStatement();
              
              String idnumber = request.getParameter("idnumber");
@@ -192,11 +369,7 @@ h2{
     <br>   
     <br>  
     <br>
-    <br>
-    <br>
-    <br>
-    <br>     
-    <br>
+    <br>  
     <br>
     <br> 
     <br>

@@ -102,62 +102,148 @@ body{
 	margin-bottom: 20px;
 }
         </style>
-        <style id="main_content">
-        .main_content{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background-color: rgb(243,245,249);
+                <style>
+.wrapper2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#4b4276;
+    max-width: 600px;
+    max-height: 60px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
 }
 
-.sign-up-form{
-	width: 500px;
-	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-	background: #fff;
-	padding: 50px;
-	margin: auto;
-	text-align: center;
-	background-color: white;
+.wrapper2 .input {
+    width: 85%;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.sign-up-form h1{
-	color: #4b4276;
-	margin-bottom: 30px;
+.searchbtn .fas{
+    position: absolute;
+
+    transform: translate(-50%, -50%);
+    font-size: 18px;
 }
 
-.input-box{
-    background-color: rgb(243,245,249);
-	border-radius: 20px;
-	padding: 8px;
-	margin: 5px 0;
+
+
+/*button{
+	background-color: #e1dbff;
+	color: black;
+	font-weight: bold;
 	width: 100%;
-	border: 1px solid #999;
-	outline: none;
-	font-weight: bold;
-        font-size: 19px
-}
-
-h1{
-	margin-top: 20px;
-}
-
-::placeholder{
-	color: 4b4276;
-        text-align: center;
-}
-
-button{
-	background-color: #4b4276;
-	color: white;
-	font-weight: bold;
-	width: 68%;
-	padding: 10px;
+	padding: 0 60px;
+        padding-left: 20px;
+        padding-right: 20px;
 	border-radius: 20px;
 	font-size: 19px;
-	margin: 14px 0;
+	margin: 12PX;
 	border: none;
 	outline: none;
 	cursor: pointer;
+}*/
+
+*{
+	box-sizing: border-box;
+}
+
+.table{
+    margin-top: 180px;
+	width: 100%;
+	border-collapse: collapse;
+        top: 45%;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid white;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: #4b4276;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+h2{
+    color: #6A5ACD;
+}
+
+.nav-area {
+       text-align:right;
+	}
+ .nav-area li a {
+		padding: 5px;
+		font-size: 15px;
+	}
+ .nav-area {
+		float: none;
+		margin-top: 0; 
+	}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color:#0000CD;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: #fff;
+	color: #333;
 }
         </style>
     </head>
@@ -174,16 +260,24 @@ button{
 			</ul>
 		</div>
 		<div class="main_content">
-                                <form method="get" >
+                    <div class="info">
+                        <div class="wrapper2">
+                            <input type="text" class="input" name="idnumber" id ="idnumber"  placeholder="Type Your ID Number......">
+                            <div class="searchbtn">
+                                <button type="button" id="addDoctor" class="input">Search</button>
+                            </div>
+                        </div>
+			<div class="sign-up-form">
+                            <form method="get" >
                                     <center>
                                         <div class="filter"></div>
                                        <table class="table" >
-                                           <th>ID Number</th>
-                                           <th>Name</th>
+                                           <th>Login ID</th>
+                                           <th>Full Name</th>
                                            <th>Age</th>
-                                           <th>Phone Number</th>
+                                           <th>Mobile Number</th>
                                            <th>Blood Group</th>
-                                           <th>Category</th>
+                                           <th>Type of Sickness</th>
                                            <th>Appointment Date</th>
                                            <th>Appointment Time</th>
 
@@ -191,43 +285,39 @@ button{
                                         <%    
                                       try{
                                          Class.forName("com.mysql.jdbc.Driver");
-                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/...","root","");
+                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
                                          Statement stat = con.createStatement();
 
-                                         String idnumber = request.getParameter("idnumber");
-                                         String sqlstr = "select * from appointment where idnumber='"+idnumber+"' ";
+                                         String idnumber = request.getParameter("loginid");
+                                         String sqlstr = "select * from appointment where idnumber='"+idnumber+"'";
                                          ResultSet rs = stat.executeQuery(sqlstr);
                                          while(rs.next()){
 
                                          %>
                                              <tr>
-                                                 <td><%=rs.getString("idnumber")%></td>
-                                                 <td><%=rs.getString("name")%></td>
-                                                 <%=rs.getInt("age")%>
-                                                 <td><%=rs.getInt("tele")%></td>
-                                                 <td><%=rs.getString("group")%></td>
-                                                 <td><%=rs.getString("categery")%></td>
-                                                 <td><%=rs.getString("date")%></td>
-                                                 <td><%=rs.getString("time")%></td>
+                                                 <td><%=rs.getString("loginid")%></td>
+                                                 <td><%=rs.getString("fullname")%></td>
+                                                 <td><%=rs.getInt("age")%></td>
+                                                 <td><%=rs.getInt("mobilenumber")%></td>
+                                                 <td><%=rs.getString("bloodgroup")%></td>
+                                                 <td><%=rs.getString("typeofsickness")%></td>
+                                                 <td><%=rs.getString("appointmentdate")%></td>
+                                                 <td><%=rs.getString("appointmenttime")%></td>
                                              </tr>
                                        <%      
                                          }
                             }
                                          catch(Exception e){
-
                                                  System.out.println(e.getMessage());
-
-
                                                  }
-
                                  %>   
                                        </table>                                                                 
                                      </center>  
                                 </form>
+			</div>
+                    </div>
                         </div>
                     </div>
 		</div>
-            </div>
-        </div>
     </body>
 </html>

@@ -146,7 +146,7 @@ h2{
        
           try{
              Class.forName("com.mysql.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/patien","root","");
+             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
              Statement stat = con.createStatement();
              
              String idnumber = request.getParameter("idnumber");
