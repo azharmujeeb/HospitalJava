@@ -217,7 +217,7 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
       out.write("                            <h1>Add Doctor</h1>\n");
-      out.write("                            <form method=\"post\" action=\"addDoctorServlet\">\n");
+      out.write("                            <form method=\"post\" action=\"../../Controller/Add_Doctor\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" placeholder=\"Full Name\" name=\"fullname\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" placeholder=\"Login ID\" name=\"loginid\">\n");
       out.write("                                <input type=\"password\" class=\"input-box\" placeholder=\"Enter Password\" name=\"password\">\n");

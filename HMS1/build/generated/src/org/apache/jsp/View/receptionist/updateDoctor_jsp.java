@@ -224,7 +224,7 @@ public final class updateDoctor_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"martialStatus\" placeholder=\"Martial Status\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" id=\"qualification\" placeholder=\"Qaulification\">\n");
       out.write("                                <!--<input type=\"text\" class=\"input-box\" id=\"\" placeholder=\"\">-->\n");
-      out.write("                                <button type=\"button\" id=\"updateDoctor\" class=\"signup-btn\">Update Doctor</button>\n");
+      out.write("                                <button type=\"submit\" id=\"updateDoctor\" class=\"signup-btn\">Update Doctor</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");

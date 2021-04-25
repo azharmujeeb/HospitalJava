@@ -178,7 +178,7 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Doctor</h1>
-                            <form method="post" action="">
+                            <form method="post" action="../../Controller/Add_Doctor">
                                 <input type="text" class="input-box" placeholder="Full Name" name="fullname">
                                 <input type="text" class="input-box" placeholder="Login ID" name="loginid">
                                 <input type="password" class="input-box" placeholder="Enter Password" name="password">
