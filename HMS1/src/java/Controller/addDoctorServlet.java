@@ -5,10 +5,11 @@
  */
 package Controller;
 
-import Model.Receptionist;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author azhar
  */
-public class Add_doctor extends HttpServlet {
+public class addDoctorServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,36 +51,45 @@ public class Add_doctor extends HttpServlet {
         processRequest(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
         
-        PrintWriter out = response.getWriter();
-        Receptionist user = new Receptionist();
-        
-        user.setName(request.getParameter("fullname"));
-        user.setLoginid(request.getParameter("loginid"));
-        user.setPassword(request.getParameter("password"));
-        user.setAddress(request.getParameter("address"));
-        user.setAge(request.getParameter("age"));
-        user.setMobilenumber(request.getParameter("mobilenumber"));
-        user.setGender(request.getParameter("gender"));
-        user.setMartialstatus(request.getParameter("martialstatus"));
-        user.setDateofbirth(request.getParameter("dateofBbirth"));
-        user.setQualification(request.getParameter("qualification"));
-        user.setDatejoined(request.getParameter("datejoined"));
-        user.setName(request.getParameter(""));
-        
-        if(user.registerDoctor()){
-            out.println("Success!");
-            RequestDispatcher req = request.getRequestDispatcher("addDoctor.jsp");
-            req.include(request, response);
-        }else{
-            out.println("Fail! Please Try Again.");
-            RequestDispatcher req = request.getRequestDispatcher("addDoctor.jsp");
-            req.include(request, response);
+        response.setContentType("text/html;charset=UTF-8");
+        try(PrintWriter out = response.getWriter()){
+            
+            String fullname = request.getParameter("fullname");
+            String loginid = request.getParameter("loginid");
+            String password = request.getParameter("password");
+            String address = request.getParameter("address");
+            String age = request.getParameter("age");
+            String mobilenumber = request.getParameter("mobilenumber");
+            String gender = request.getParameter("gender");
+            String martialstatus = request.getParameter("martialstatus");
+            String dateofbirth = request.getParameter("dateofbirth");
+            String qualification = request.getParameter("qualification");
+            String datejoined = request.getParameter("datejoined");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem", "root","");
+            Statement stmt = con.createStatement();
+            String query = "insert into doctor values('"+fullname+"','"+loginid+"','"+password+"','"+address+"','"+age+"','"+mobilenumber+"','"+gender+"','"+martialstatus+"','"+dateofbirth+"','"+qualification+"','"+datejoined+"')";
+            stmt.execute(query);
+            System.out.println("Recorded added successfully");
+            
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+        
     }
 
     /**

@@ -178,7 +178,7 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Update Doctor Profile</h1>
-                            <form id="loginForm" accept="#">
+                            <form method="post" action="Update_Doctor">
                                 <input type="text" class="input-box" id="loginId" placeholder="Login ID">
                                 <input type="text" class="input-box" id="address" placeholder="Address">
                                 <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">

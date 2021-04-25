@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class updateDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -47,7 +47,7 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Add Doctor</title>\n");
+      out.write("        <title>Update Doctor Profile</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -135,7 +135,7 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tmargin-bottom: 20px;\n");
       out.write("}\n");
       out.write("        </style>\n");
-      out.write("                <style id=\"main_content\">\n");
+      out.write("                        <style id=\"main_content\">\n");
       out.write("        .main_content{\n");
       out.write("\tmargin: 0;\n");
       out.write("\tpadding: 0;\n");
@@ -192,13 +192,13 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\toutline: none;\n");
       out.write("\tcursor: pointer;\n");
       out.write("}\n");
-      out.write("        </style>\n");
+      out.write("</style>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"mainContainer\">\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("\t\t<div class=\"sidebar\">\n");
-      out.write("\t\t\t<h2>Add Doctor</h2>\n");
+      out.write("\t\t\t<h2>Update Doctor</h2>\n");
       out.write("\t\t\t<ul>\n");
       out.write("\t\t\t\t<li><a href=\"addPatient.jsp\"><i class=\"fas fa-user-plus\"></i> Add Patient</a></li>\n");
       out.write("\t\t\t\t<li><a href=\"patientInfo.jsp\"><i class=\"fas fa-users\"></i> Patient Information</a></li>\n");
@@ -216,28 +216,21 @@ public final class addDoctor_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
-      out.write("                            <h1>Add Doctor</h1>\n");
-      out.write("                            <form method=\"post\" action=\"addDoctorServlet\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" placeholder=\"Full Name\" name=\"fullname\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" placeholder=\"Login ID\" name=\"loginid\">\n");
-      out.write("                                <input type=\"password\" class=\"input-box\" placeholder=\"Enter Password\" name=\"password\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Address\" name=\"address\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Age\" name=\"age\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Mobile Number\" name=\"mobilenumber\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Gender\" name=\"gender\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  name=\"martialstatus\" placeholder=\"Martial Status\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Date of Birth\" name=\"dateofbirth\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Qaulification\" name=\"qualification\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\"  placeholder=\"Date Joined\" name=\"datejoined\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">\n");
-      out.write("                                <button type=\"submit\" class=\"signup-btn\">Add Doctor</button>\n");
+      out.write("                            <h1>Update Doctor Profile</h1>\n");
+      out.write("                            <form method=\"post\" action=\"Update_Doctor\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"loginId\" placeholder=\"Login ID\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"address\" placeholder=\"Address\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"mobileNumber\" placeholder=\"Mobile Number\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"martialStatus\" placeholder=\"Martial Status\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" id=\"qualification\" placeholder=\"Qaulification\">\n");
+      out.write("                                <!--<input type=\"text\" class=\"input-box\" id=\"\" placeholder=\"\">-->\n");
+      out.write("                                <button type=\"button\" id=\"updateDoctor\" class=\"signup-btn\">Update Doctor</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\t\t</div>\n");
-      out.write("            </div>\n");
-      out.write("        </div>\n");
       out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("</html>");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

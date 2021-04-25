@@ -6,7 +6,7 @@ public class Receptionist {
     
     DBCon con = new DBCon();
     
-    private String name;
+    private String fullname;
     private String loginid;
     private String password;
     private String address;
@@ -28,11 +28,11 @@ public class Receptionist {
     }
 
     public String getName() {
-        return name;
+        return fullname;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.fullname = name;
     }
 
     public String getLoginid() {
@@ -122,7 +122,7 @@ public class Receptionist {
         
         try {
                 PreparedStatement ps = con.createConnection().prepareStatement("insert into doctor(fullname, loginid, password, address, age, mobilenumber, gender, martialstatus, dateofbirth, qualification, datejoined)value(?,?,?,?,?,?,?,?,?,?,?)");
-                ps.setString(1, this.name);
+                ps.setString(1, this.fullname);
                 ps.setString(2, this.loginid);
                 ps.setString(3, this.password);
                 ps.setString(4, this.address);
@@ -139,6 +139,39 @@ public class Receptionist {
             e.printStackTrace();
         }
         return x == 1;
+    }
+    
+    //Update Doctor
+    public boolean updateDoctor(){
+        
+        int x=0;
+        
+        try {
+            
+            PreparedStatement ps = con.createConnection().prepareStatement("update doctor set address = ?, mobilenumber = ?, martialstatus = ?, qualification = ? where loginid = ?");
+            ps.setString(1, this.address);
+            ps.setString(2, this.mobilenumber);
+            ps.setString(3, this.martialstatus);
+            ps.setString(4, this.qualification);
+            ps.setString(5, this.loginid);
+            
+            x = ps.executeUpdate();
+
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return x==1;
+        
+    }
+
+    public void getAddress(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void getMobilenumber(String parameter) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

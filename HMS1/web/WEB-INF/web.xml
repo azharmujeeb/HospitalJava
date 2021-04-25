@@ -4,9 +4,25 @@
         <servlet-name>AddDoctorServlet</servlet-name>
         <servlet-class>Controller.Add_doctor</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>addDoctorServlet</servlet-name>
+        <servlet-class>Controller.addDoctorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update_Doctor</servlet-name>
+        <servlet-class>Controller.Update_Doctor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddDoctorServlet</servlet-name>
-        <url-pattern>/AddDoctorServlet</url-pattern>
+        <url-pattern>/Controller/AddDoctorServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addDoctorServlet</servlet-name>
+        <url-pattern>/addDoctorServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update_Doctor</servlet-name>
+        <url-pattern>/Update_Doctor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

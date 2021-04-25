@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author azhar
  */
-public class Add_doctor extends HttpServlet {
+public class Update_Doctor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -50,6 +50,14 @@ public class Add_doctor extends HttpServlet {
         processRequest(request, response);
     }
 
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -58,31 +66,26 @@ public class Add_doctor extends HttpServlet {
         PrintWriter out = response.getWriter();
         Receptionist user = new Receptionist();
         
-        user.setName(request.getParameter("fullname"));
-        user.setLoginid(request.getParameter("loginid"));
-        user.setPassword(request.getParameter("password"));
         user.setAddress(request.getParameter("address"));
-        user.setAge(request.getParameter("age"));
         user.setMobilenumber(request.getParameter("mobilenumber"));
-        user.setGender(request.getParameter("gender"));
         user.setMartialstatus(request.getParameter("martialstatus"));
-        user.setDateofbirth(request.getParameter("dateofBbirth"));
         user.setQualification(request.getParameter("qualification"));
-        user.setDatejoined(request.getParameter("datejoined"));
-        user.setName(request.getParameter(""));
+        user.setLoginid(request.getParameter("loginid"));
         
-        if(user.registerDoctor()){
+        if(user.updateDoctor()){
             out.println("Success!");
-            RequestDispatcher req = request.getRequestDispatcher("addDoctor.jsp");
+            RequestDispatcher req = request.getRequestDispatcher("updateDoctor.jsp");
             req.include(request, response);
         }else{
-            out.println("Fail! Please Try Again.");
+            out.println("Fail!");
             RequestDispatcher req = request.getRequestDispatcher("addDoctor.jsp");
             req.include(request, response);
         }
+        
+        
     }
 
-    /**
+    /*
      * Returns a short description of the servlet.
      *
      * @return a String containing servlet description
