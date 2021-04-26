@@ -4,9 +4,13 @@
  * and open the template in the editor.
  */
 package Controller;
-
+import Model.AddPatientModel;
+import Model.DBCon;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -60,6 +64,37 @@ public class Add_Patient extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        //response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        AddPatientModel user = new AddPatientModel();
+        
+        user.setFullname(request.getParameter("fullname"));
+        user.setLoginid(request.getParameter("loginid"));
+        user.setPassword(request.getParameter("password"));
+        user.setAddress(request.getParameter("address"));
+        user.setAge(request.getParameter("age"));
+        user.setMobilenumber(request.getParameter("mobilenumber"));
+        user.setBloodgroup(request.getParameter("bloodgroup"));
+        user.setMartailstatus(request.getParameter("martialstatus"));
+        user.setGender(request.getParameter("gender"));
+        user.setDateofbirth(request.getParameter("dateofbirth"));
+        user.setDeceased(request.getParameter("deceased"));
+        
+        if (user.registerPatient()) {
+            
+            out.println("Success!");
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addPatient.jsp");
+            req.include(request, response);
+            
+        } else {
+            
+            out.println("Fail to add Patient");
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addDoctor.jsp");
+            req.include(request, response);
+            
+        }
+        
     }
 
     /**

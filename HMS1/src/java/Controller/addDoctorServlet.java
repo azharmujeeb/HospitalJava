@@ -1,19 +1,22 @@
+package Controller;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
  *
@@ -65,8 +68,9 @@ public class addDoctorServlet extends HttpServlet {
         processRequest(request, response);
         
         response.setContentType("text/html;charset=UTF-8");
-        try(PrintWriter out = response.getWriter()){
-            
+        PrintWriter out = response.getWriter();
+        
+        try {
             String fullname = request.getParameter("fullname");
             String loginid = request.getParameter("loginid");
             String password = request.getParameter("password");
@@ -80,15 +84,20 @@ public class addDoctorServlet extends HttpServlet {
             String datejoined = request.getParameter("datejoined");
             
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem", "root","");
-            Statement stmt = con.createStatement();
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+            Statement stat = con.createStatement();
             String query = "insert into doctor values('"+fullname+"','"+loginid+"','"+password+"','"+address+"','"+age+"','"+mobilenumber+"','"+gender+"','"+martialstatus+"','"+dateofbirth+"','"+qualification+"','"+datejoined+"')";
-            stmt.execute(query);
-            System.out.println("Recorded added successfully");
+            stat.execute(query);
+            System.out.println("Recorded!");
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addDoctor.jsp");
+            req.include(request, response);
             
         } catch (Exception e) {
             e.printStackTrace();
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addDoctor.jsp");
+            req.include(request, response);
         }
+        
         
     }
 

@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import Model.Receptionist;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -61,28 +60,7 @@ public class Update_Doctor extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        
-        PrintWriter out = response.getWriter();
-        Receptionist user = new Receptionist();
-        
-        user.setAddress(request.getParameter("address"));
-        user.setMobilenumber(request.getParameter("mobilenumber"));
-        user.setMartialstatus(request.getParameter("martialstatus"));
-        user.setQualification(request.getParameter("qualification"));
-        user.setLoginid(request.getParameter("loginid"));
-        
-        if(user.updateDoctor()){
-            out.println("Success!");
-            RequestDispatcher req = request.getRequestDispatcher("updateDoctor.jsp");
-            req.include(request, response);
-        }else{
-            out.println("Fail!");
-            RequestDispatcher req = request.getRequestDispatcher("addDoctor.jsp");
-            req.include(request, response);
-        }
-        
-        
+        processRequest(request, response); 
     }
 
     /*

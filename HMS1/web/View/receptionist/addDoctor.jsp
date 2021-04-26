@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -178,7 +177,7 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Doctor</h1>
-                            <form method="post" action="../../Controller/Add_Doctor">
+                            <form method="post" action="${pageContext.request.contextPath}/addDoctorServlet">
                                 <input type="text" class="input-box" placeholder="Full Name" name="fullname">
                                 <input type="text" class="input-box" placeholder="Login ID" name="loginid">
                                 <input type="password" class="input-box" placeholder="Enter Password" name="password">
@@ -187,9 +186,11 @@ button{
                                 <input type="text" class="input-box"  placeholder="Mobile Number" name="mobilenumber">
                                 <input type="text" class="input-box"  placeholder="Gender" name="gender">
                                 <input type="text" class="input-box"  name="martialstatus" placeholder="Martial Status">
-                                <input type="text" class="input-box"  placeholder="Date of Birth" name="dateofbirth" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <!--<input type="text" class="input-box"  placeholder="Date of Birth" name="dateofbirth" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                <input type="text" class="input-box" placeholder="Date of Birth" name="dateofbirth">
                                 <input type="text" class="input-box"  placeholder="Qaulification" name="qualification">
-                                <input type="text" class="input-box"  placeholder="Date Joined" name="datejoined" onfocus="(this.type='date')" onblur="(this.type='text')">
+                                <!--<input type="text" class="input-box"  placeholder="Date Joined" name="datejoined" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                <input type="text" class="input-box" placeholder="Date Joined" name="datejoined">
                                 <button type="submit" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>

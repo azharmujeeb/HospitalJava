@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -179,19 +178,20 @@ button{
                     <div class="info">
 			<div class="sign-up-form">
                             <h1>Add Patient</h1>
-				<form id="loginForm" accept="#">
-                                    <input type="text" class="input-box" id="fname" placeholder="Full Name">
-                                    <input type="text" class="input-box" id="loginId" placeholder="Login Id">
-                                    <input type="password" class="input-box" id="password" placeholder="Enter Password">
-                                    <input type="text" class="input-box" id="Address" placeholder="Address">
-                                    <input type="text" class="input-box" id="age" placeholder="Age">
-                                    <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                    <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
-                                    <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
-                                    <input type="text" class="input-box" id="gender" placeholder="Gender">
-                                    <input type="text" class="input-box" id="dateOfBirth" placeholder="Date Of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                    <input type="text" class="input-box" id="deceased" placeholder="Deceased">
-                                    <button type="button" id="addPatient" class="signup-btn">Add Patient</button>
+                            <form id="loginForm" action="${pageContext.request.contextPath}/Add_Patient" method="post">
+                                    <input type="text" class="input-box" name="fullname" placeholder="Full Name">
+                                    <input type="text" class="input-box" name="loginid" placeholder="Login Id">
+                                    <input type="password" class="input-box" name="password" placeholder="Enter Password">
+                                    <input type="text" class="input-box" name="address" placeholder="Address">
+                                    <input type="text" class="input-box" name="age" placeholder="Age">
+                                    <input type="text" class="input-box" name="mobilenumber" placeholder="Mobile Number">
+                                    <input type="text" class="input-box" name="bloodgroup" placeholder="Blood Group">
+                                    <input type="text" class="input-box" name="martialstatus" placeholder="Martial Status">
+                                    <input type="text" class="input-box" name="gender" placeholder="Gender">
+                                    <input type="text" class="input-box" name="dateofbirth" placeholder="Date Of Birth">
+                                    <!--<input type="text" class="input-box" name="dateofbirth" placeholder="Date Of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                    <input type="text" class="input-box" name="deceased" placeholder="Deceased">
+                                    <button type="submit" id="addPatient" name="addPatient" class="signup-btn">Add Patient</button>
 				</form>
 			</div>
                     </div>
