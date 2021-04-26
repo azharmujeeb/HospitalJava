@@ -4,6 +4,10 @@
     Author     : azhar
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.DriverManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -182,9 +186,49 @@ button{
                         <div class="sign-up-form">
                             <h1>Add Room</h1>
                             <form id="loginForm" method="post" action="${pageContext.request.contextPath}/Add_Room">
-                                <input type="text" class="input-box" name="patientname" placeholder="Patient Name">
-                                <input type="text" class="input-box" name="doctorname" placeholder="Doctor Name">
-                                <select name="typeofsickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;">
+                                <!--<input type="text" class="input-box" name="patientname" placeholder="Patient Name">-->
+                                <select class="input-box" name="patientname" style="padding-left :130px;  color: black;">
+                                    <option>Select Patient</option>
+                                    <%
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from patient";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                %>
+                                                <option><%=rs.getString("fullname")%></option>
+                                                <%
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    %>
+                                </select>
+                                <!--<input type="text" class="input-box" name="doctorname" placeholder="Doctor Name">-->
+                                <select class="input-box" name="doctorname" style="padding-left :130px;  color: black;">
+                                    <option>Select Doctor</option>
+                                    <%
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from doctor";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                %>
+                                                <option><%=rs.getString("fullname")%></option>
+                                                <%
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    %>
+                                </select>
+                                <select name="typeofsickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;  color: black;">
                                     <option>Type Of Sickness</option>
                                     <option value="allergies">Allergies</option>
                                     <option value="coldAndFlu">Colds and Flu</option>
@@ -194,7 +238,7 @@ button{
                                     <option value="stomachAches">Stomach Aches</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <select name="typeofroom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px;">
+                                <select name="typeofroom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px; color: black;">
                                     <option>Type Of Room</option>
                                     <option value="vip">VIP Room</option>
                                     <option value="normal">Normal Room</option>
@@ -202,7 +246,7 @@ button{
                                 </select>
                                 <input type="text" class="input-box" name="roomjoined" placeholder="Room Joined">
                                        <!--<input type="text" class="input-box" name="roomjoined" placeholder="Room Joined" onfocus="(this.type='date')" onblur="(this.type='text')">-->
-                                <button type="submit" id="addPatient" class="signup-btn">Add Doctor</button>
+                                <button type="submit" id="addPatient" class="signup-btn">Add Room</button>
                             </form>
                         </div>
                     </div>

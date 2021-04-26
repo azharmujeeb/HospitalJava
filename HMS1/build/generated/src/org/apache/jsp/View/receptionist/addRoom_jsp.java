@@ -3,6 +3,10 @@ package org.apache.jsp.View.receptionist;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public final class addRoom_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -41,6 +45,10 @@ public final class addRoom_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -223,9 +231,61 @@ public final class addRoom_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <form id=\"loginForm\" method=\"post\" action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("/Add_Room\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"patientname\" placeholder=\"Patient Name\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"doctorname\" placeholder=\"Doctor Name\">\n");
-      out.write("                                <select name=\"typeofsickness\" id=\"typeOfSickness\" placeholder=\"Type Of Sickness\" class=\"input-box\" style=\"padding-left :130px;\">\n");
+      out.write("                                <!--<input type=\"text\" class=\"input-box\" name=\"patientname\" placeholder=\"Patient Name\">-->\n");
+      out.write("                                <select class=\"input-box\" name=\"patientname\" style=\"padding-left :130px;  color: black;\">\n");
+      out.write("                                    <option>Select Patient</option>\n");
+      out.write("                                    ");
+
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from patient";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                
+      out.write("\n");
+      out.write("                                                <option>");
+      out.print(rs.getString("fullname"));
+      out.write("</option>\n");
+      out.write("                                                ");
+
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                </select>\n");
+      out.write("                                <!--<input type=\"text\" class=\"input-box\" name=\"doctorname\" placeholder=\"Doctor Name\">-->\n");
+      out.write("                                <select class=\"input-box\" name=\"doctorname\" style=\"padding-left :130px;  color: black;\">\n");
+      out.write("                                    <option>Select Doctor</option>\n");
+      out.write("                                    ");
+
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from doctor";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                
+      out.write("\n");
+      out.write("                                                <option>");
+      out.print(rs.getString("fullname"));
+      out.write("</option>\n");
+      out.write("                                                ");
+
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                </select>\n");
+      out.write("                                <select name=\"typeofsickness\" id=\"typeOfSickness\" placeholder=\"Type Of Sickness\" class=\"input-box\" style=\"padding-left :130px;  color: black;\">\n");
       out.write("                                    <option>Type Of Sickness</option>\n");
       out.write("                                    <option value=\"allergies\">Allergies</option>\n");
       out.write("                                    <option value=\"coldAndFlu\">Colds and Flu</option>\n");
@@ -235,15 +295,15 @@ public final class addRoom_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                    <option value=\"stomachAches\">Stomach Aches</option>\n");
       out.write("                                    <option value=\"other\">Other</option>\n");
       out.write("                                </select>\n");
-      out.write("                                <select name=\"typeofroom\" id=\"typeOfRom\" placeholder=\"Type Of Room\" class=\"input-box\" style=\"padding-left :140px;\">\n");
+      out.write("                                <select name=\"typeofroom\" id=\"typeOfRom\" placeholder=\"Type Of Room\" class=\"input-box\" style=\"padding-left :140px; color: black;\">\n");
       out.write("                                    <option>Type Of Room</option>\n");
       out.write("                                    <option value=\"vip\">VIP Room</option>\n");
       out.write("                                    <option value=\"normal\">Normal Room</option>\n");
       out.write("                                    <option value=\"doubleRoom\">Double Room</option>\n");
       out.write("                                </select>\n");
-      out.write("                                <input type=\"text\"  name=\"roomjoined\" placeholder=\"Room Joined\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"roomjoined\" placeholder=\"Room Joined\">\n");
       out.write("                                       <!--<input type=\"text\" class=\"input-box\" name=\"roomjoined\" placeholder=\"Room Joined\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\">-->\n");
-      out.write("                                <button type=\"submit\" id=\"addPatient\" class=\"signup-btn\">Add Doctor</button>\n");
+      out.write("                                <button type=\"submit\" id=\"addPatient\" class=\"signup-btn\">Add Room</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
