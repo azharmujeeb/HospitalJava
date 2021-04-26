@@ -1,12 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
-        <servlet-name>AddDoctorServlet</servlet-name>
-        <servlet-class>Controller.Add_doctor</servlet-class>
+        <servlet-name>Update_Doctor</servlet-name>
+        <servlet-class>Controller.Update_Doctor</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_Patient</servlet-name>
+        <servlet-class>Controller.Add_Patient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_Room</servlet-name>
+        <servlet-class>Controller.Add_Room</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Add_Bill</servlet-name>
+        <servlet-class>Controller.Add_Bill</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update_Patient</servlet-name>
+        <servlet-class>Controller.Update_Patient</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Update_Room</servlet-name>
+        <servlet-class>Controller.Update_Room</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Doctor_info</servlet-name>
+        <servlet-class>Controller.Doctor_info</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Patient_info</servlet-name>
+        <servlet-class>Controller.Patient_info</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addDoctorServlet</servlet-name>
+        <servlet-class>Controller.addDoctorServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>AddDoctorServlet</servlet-name>
-        <url-pattern>/AddDoctorServlet</url-pattern>
+        <servlet-name>Update_Doctor</servlet-name>
+        <url-pattern>/Update_Doctor</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_Patient</servlet-name>
+        <url-pattern>/Add_Patient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_Room</servlet-name>
+        <url-pattern>/Add_Room</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Add_Bill</servlet-name>
+        <url-pattern>/Add_Bill</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update_Patient</servlet-name>
+        <url-pattern>/Update_Patient</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Update_Room</servlet-name>
+        <url-pattern>/Update_Room</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Doctor_info</servlet-name>
+        <url-pattern>/Doctor_info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Patient_info</servlet-name>
+        <url-pattern>/Patient_info</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addDoctorServlet</servlet-name>
+        <url-pattern>/addDoctorServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

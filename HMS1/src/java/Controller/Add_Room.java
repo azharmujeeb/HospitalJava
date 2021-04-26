@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import Model.Receptionist;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -17,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author azhar
  */
-public class Add_doctor extends HttpServlet {
+public class Add_Room extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -61,28 +60,6 @@ public class Add_doctor extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
-        PrintWriter out = response.getWriter();
-        Receptionist user = new Receptionist();
-        
-        user.setName(request.getParameter("fullname"));
-        user.setLoginid(request.getParameter("loginid"));
-        user.setPassword(request.getParameter("password"));
-        user.setAddress(request.getParameter("address"));
-        user.setAge(request.getParameter("age"));
-        user.setMobilenumber(request.getParameter("mobilenumber"));
-        user.setGender(request.getParameter("gender"));
-        user.setMartialstatus(request.getParameter("martialstatus"));
-        user.setDateofbirth(request.getParameter("dateofBbirth"));
-        user.setQualification(request.getParameter("qualification"));
-        user.setDatejoined(request.getParameter("datejoined"));
-        
-        if(user.registerDoctor(
-        )){
-            out.println("Success!");
-        }else{
-            out.println("Fail!");
-        }
     }
 
     /**

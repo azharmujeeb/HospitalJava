@@ -178,14 +178,14 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Update Doctor Profile</h1>
-                            <form id="loginForm" accept="#">
+                            <form method="post" action="../../Controller/Update_Doctor">
                                 <input type="text" class="input-box" id="loginId" placeholder="Login ID">
                                 <input type="text" class="input-box" id="address" placeholder="Address">
                                 <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
                                 <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
                                 <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
                                 <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="button" id="updateDoctor" class="signup-btn">Update Doctor</button>
+                                <button type="submit" id="updateDoctor" class="signup-btn">Update Doctor</button>
                             </form>
                         </div>
                     </div>

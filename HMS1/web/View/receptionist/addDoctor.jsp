@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -178,19 +177,21 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Doctor</h1>
-                            <form id="loginForm" method="post" action="Add_Doctor">
-                                <input type="text" class="input-box" id="fname" placeholder="Full Name">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <input type="password" class="input-box" id="password" placeholder="Enter Password">
-                                <input type="text" class="input-box" id="address" placeholder="Address">
-                                <input type="text" class="input-box" id="age" placeholder="Age">
-                                <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                <input type="text" class="input-box" id="gender" placeholder="Gender">
-                                <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
-                                <input type="text" class="input-box" id="dateOfBirth" placeholder="Date of Birth" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
-                                <input type="text" class="input-box" id="dateJoined" placeholder="Date Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <button type="submit" id="addDoctor" class="signup-btn">Add Doctor</button>
+                            <form method="post" action="${pageContext.request.contextPath}/addDoctorServlet">
+                                <input type="text" class="input-box" placeholder="Full Name" name="fullname">
+                                <input type="text" class="input-box" placeholder="Login ID" name="loginid">
+                                <input type="password" class="input-box" placeholder="Enter Password" name="password">
+                                <input type="text" class="input-box"  placeholder="Address" name="address">
+                                <input type="text" class="input-box"  placeholder="Age" name="age">
+                                <input type="text" class="input-box"  placeholder="Mobile Number" name="mobilenumber">
+                                <input type="text" class="input-box"  placeholder="Gender" name="gender">
+                                <input type="text" class="input-box"  name="martialstatus" placeholder="Martial Status">
+                                <!--<input type="text" class="input-box"  placeholder="Date of Birth" name="dateofbirth" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                <input type="text" class="input-box" placeholder="Date of Birth" name="dateofbirth">
+                                <input type="text" class="input-box"  placeholder="Qaulification" name="qualification">
+                                <!--<input type="text" class="input-box"  placeholder="Date Joined" name="datejoined" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                <input type="text" class="input-box" placeholder="Date Joined" name="datejoined">
+                                <button type="submit" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>
                     </div>
