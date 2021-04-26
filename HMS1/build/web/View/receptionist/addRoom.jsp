@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -182,10 +181,10 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Add Room</h1>
-                            <form id="loginForm" accept="#">
-                                <input type="text" class="input-box" id="pname" placeholder="Patient Name">
-                                <input type="text" class="input-box" id="dname" placeholder="Doctor Name">
-                                <select name="typeOfSickness" name="typeOfSickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;">
+                            <form id="loginForm" method="post" action="${pageContext.request.contextPath}/Add_Room">
+                                <input type="text" class="input-box" name="patientname" placeholder="Patient Name">
+                                <input type="text" class="input-box" name="doctorname" placeholder="Doctor Name">
+                                <select name="typeofsickness" id="typeOfSickness" placeholder="Type Of Sickness" class="input-box" style="padding-left :130px;">
                                     <option>Type Of Sickness</option>
                                     <option value="allergies">Allergies</option>
                                     <option value="coldAndFlu">Colds and Flu</option>
@@ -195,14 +194,15 @@ button{
                                     <option value="stomachAches">Stomach Aches</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <select name="typeOfRoom" name="typeOfRoom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px;">
+                                <select name="typeofroom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px;">
                                     <option>Type Of Room</option>
                                     <option value="vip">VIP Room</option>
                                     <option value="normal">Normal Room</option>
                                     <option value="doubleRoom">Double Room</option>
                                 </select>
-                                <input type="text" class="input-box" id="roomJoined" placeholder="Room Joined" onfocus="(this.type='date')" onblur="(this.type='text')">
-                                <button type="button" id="addPatient" class="signup-btn">Add Doctor</button>
+                                <input type="text" class="input-box" name="roomjoined" placeholder="Room Joined">
+                                       <!--<input type="text" class="input-box" name="roomjoined" placeholder="Room Joined" onfocus="(this.type='date')" onblur="(this.type='text')">-->
+                                <button type="submit" id="addPatient" class="signup-btn">Add Doctor</button>
                             </form>
                         </div>
                     </div>
