@@ -3,8 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/GitHub/HospitalJava/HMS1/src/java/Controller/Add_Room.java</file>
+            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/billing.jsp</file>
             <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/addRoom.jsp</file>
+            <file>file:/E:/GitHub/HospitalJava/HMS1/src/java/Controller/Add_Bill.java</file>
         </group>
     </open-files>
 </project-private>
