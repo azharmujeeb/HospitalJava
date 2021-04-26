@@ -3,6 +3,10 @@ package org.apache.jsp.View.receptionist;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.Connection;
 
 public final class billing_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -41,6 +45,10 @@ public final class billing_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -221,19 +229,39 @@ public final class billing_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"info\">\n");
       out.write("\t\t\t<div class=\"sign-up-form\">\n");
       out.write("                            <h1>Billing</h1>\n");
-      out.write("                            <form id=\"loginForm\" accept=\"#\">\n");
+      out.write("                            <form method=\"post\" action=\"\">\n");
       out.write("                                <div>\n");
-      out.write("                                    <input type=\"text\" class=\"input-box\" id=\"fname\" placeholder=\"Search by Full Name\">\n");
-      out.write("                                    <button type=\"buttom\" id=\"searchName\" class=\"signup-btn\">Search</button>\n");
-      out.write("                                </div>\n");
-      out.write("                                <div>\n");
-      out.write("                                    <input type=\"text\" class=\"input-box\" id=\"loginId\" placeholder=\"Search by Login ID\">\n");
-      out.write("                                    <button type=\"buttom\" id=\"searchLoginId\" class=\"signup-btn\">Search</button>                                    \n");
+      out.write("                                    <select>\n");
+      out.write("                                    <option>Select Patient Name</option>\n");
+      out.write("                                    ");
+
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from patient";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                
+      out.write("\n");
+      out.write("                                                <option>");
+      out.print(rs.getString("fullname"));
+      out.write("</option>\n");
+      out.write("                                                ");
+
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    
+      out.write("\n");
+      out.write("                                </select>\n");
       out.write("                                </div>\n");
       out.write("                                <hr>\n");
-      out.write("                                <input type=\"number\" class=\"input-box\" id=\"days\" placeholder=\"Number of Days Stayed\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" id=\"roomType\" placeholder=\"Room Type\">\n");
-      out.write("                                <input type=\"number\" class=\"input-box\" id=\"medicineFees\" placeholder=\"Medicine Fees\">\n");
+      out.write("                                <input type=\"number\" class=\"input-box\" name=\"daysstayed\" placeholder=\"Number of Days Stayed\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"roomtype\" placeholder=\"Room Type\">\n");
+      out.write("                                <input type=\"number\" class=\"input-box\" name=\"medicinefees\" placeholder=\"Medicine Fees\">\n");
       out.write("                                <button type=\"button\" id=\"doneBilling\" class=\"signup-btn\">Bill</button>\n");
       out.write("                            </form>\n");
       out.write("\t\t\t</div>\n");

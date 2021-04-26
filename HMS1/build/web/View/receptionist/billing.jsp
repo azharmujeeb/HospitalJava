@@ -186,9 +186,9 @@ hr {
                     <div class="info">
 			<div class="sign-up-form">
                             <h1>Billing</h1>
-                            <form method="post" action="">
+                            <form method="post" action="${pageContext.request.contextPath}/Add_Bill">
                                 <div>
-                                    <select>
+                                    <select class="input-box" style="padding-left:120px;">
                                     <option>Select Patient Name</option>
                                     <%
                                         try {
