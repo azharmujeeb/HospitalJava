@@ -172,14 +172,14 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Update Doctor Profile</h1>
-                            <form id="loginForm" accept="#">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <input type="text" class="input-box" id="address" placeholder="Address">
-                                <input type="text" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                <input type="text" class="input-box" id="martialStatus" placeholder="Martial Status">
-                                <input type="text" class="input-box" id="qualification" placeholder="Qaulification">
+                            <form method="post" action="${pageContext.request.contextPath}/Update_Doctor2">
+                                <input type="text" class="input-box" name="loginid" placeholder="Login ID">
+                                <input type="text" class="input-box" name="address" placeholder="Address">
+                                <input type="text" class="input-box" name="mobilenumber" placeholder="Mobile Number">
+                                <input type="text" class="input-box" name="martialstatus" placeholder="Martial Status">
+                                <input type="text" class="input-box" name="qualification" placeholder="Qaulification">
                                 <!--<input type="text" class="input-box" id="" placeholder="">-->
-                                <button type="button" id="updateDoctor" class="signup-btn">Update Doctor</button>
+                                <button type="submit" id="updateDoctor" class="signup-btn">Update Doctor</button>
                             </form>
                         </div>
                     </div>

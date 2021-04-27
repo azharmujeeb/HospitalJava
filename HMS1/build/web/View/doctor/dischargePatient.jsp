@@ -172,9 +172,9 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Discharge Patient</h1>
-                            <form method="post" action="${pageContext.request.contextPath}/">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <button type="button" id="dischargePatient" class="signup-btn">Discharge Patient</button>
+                            <form method="post" action="${pageContext.request.contextPath}/Discharge_Patient">
+                                <input type="text" class="input-box" name="loginid" placeholder="Login ID">
+                                <button type="submit" id="dischargePatient" class="signup-btn">Discharge Patient</button>
                             </form>
                         </div>
                     </div>

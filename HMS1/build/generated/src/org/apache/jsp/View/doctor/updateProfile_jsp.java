@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class updateProfile_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -47,7 +47,7 @@ public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Discharge Patient</title>\n");
+      out.write("        <title>Update Profile</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -198,7 +198,7 @@ public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <div class=\"mainContainer\">\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("\t\t<div class=\"sidebar\">\n");
-      out.write("\t\t\t<h2>Discharge Patient</h2>\n");
+      out.write("\t\t\t<h2>Update Profile</h2>\n");
       out.write("\t\t\t<ul>\n");
       out.write("\t\t\t\t<li><a href=\"updateProfile.jsp\"><i class=\"fas fa-pen-alt\"></i>Update Profile</a></li>\n");
       out.write("                                <li><a href=\"viewAppointment.jsp\"><i class=\"far fa-calendar-check\"></i> View Appointment</a></li>\n");
@@ -210,12 +210,17 @@ public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
-      out.write("                            <h1>Discharge Patient</h1>\n");
+      out.write("                            <h1>Update Doctor Profile</h1>\n");
       out.write("                            <form method=\"post\" action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/Discharge_Patient\">\n");
+      out.write("/Update_Doctor2\">\n");
       out.write("                                <input type=\"text\" class=\"input-box\" name=\"loginid\" placeholder=\"Login ID\">\n");
-      out.write("                                <button type=\"submit\" id=\"dischargePatient\" class=\"signup-btn\">Discharge Patient</button>\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"address\" placeholder=\"Address\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"mobilenumber\" placeholder=\"Mobile Number\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"martialstatus\" placeholder=\"Martial Status\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"qualification\" placeholder=\"Qaulification\">\n");
+      out.write("                                <!--<input type=\"text\" class=\"input-box\" id=\"\" placeholder=\"\">-->\n");
+      out.write("                                <button type=\"submit\" id=\"updateDoctor\" class=\"signup-btn\">Update Doctor</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
@@ -223,7 +228,7 @@ public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            </div>\n");
       out.write("        </div>\n");
       out.write("    </body>\n");
-      out.write("</html>");
+      out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
