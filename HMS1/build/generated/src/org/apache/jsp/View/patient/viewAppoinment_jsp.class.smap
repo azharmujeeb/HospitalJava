@@ -1,0 +1,16 @@
+SMAP
+viewAppoinment_jsp.java
+JSP
+*S JSP
+*F
++ 0 viewAppoinment.jsp
+View/patient/viewAppoinment.jsp
+*L
+5,289:50
+294,11:340
+304,2:351
+306,8:353,3
+314,2:377
+316,5:380
+320,14:385
+*E

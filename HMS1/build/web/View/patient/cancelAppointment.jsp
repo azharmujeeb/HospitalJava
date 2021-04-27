@@ -12,7 +12,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -165,15 +164,15 @@ button{
 				<li><a href="appointment.jsp"><i class="fas fa-book-medical"></i>Book Appointment</a></li>
                                 <li><a href="cancelAppointment.jsp"><i class="fas fa-window-close"></i>Cancel Appointment</a></li>
                                 <li><a href="feedback.jsp"><i class="fas fa-comments"></i>Feedback</a></li>
-			</ul>
+                    </ul>
 		</div>
 		<div class="main_content">
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Cancel Appointment</h1>
-                            <form id="loginForm" accept="#">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <button type="button" id="cancelAppointment" class="signup-btn">Cancel Appointment</button>
+                            <form method="post" action="${pageContext.request.contextPath}/Cancel_Appointment">
+                                <input type="text" class="input-box" name="loginid" placeholder="Login ID">
+                                <button type="submit" id="cancelAppointment" class="signup-btn">Cancel Appointment</button>
                             </form>
                         </div>
                     </div>

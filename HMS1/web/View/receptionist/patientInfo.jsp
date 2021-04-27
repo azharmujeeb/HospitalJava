@@ -4,6 +4,10 @@
     Author     : azhar
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -96,62 +100,158 @@ body{
 	margin-bottom: 20px;
 }
         </style>
-        <style id="main_content">
-        .main_content{
-	margin: 0;
-	padding: 0;
-	font-family: sans-serif;
-	background-color: rgb(243,245,249);
+        
+        <style id="dilhani">
+.wrapper2{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background:#4b4276;
+    max-width: 750px;
+    max-height: 60px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 8px;
 }
 
-.sign-up-form{
-	width: 500px;
-	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
-	background: #fff;
-	padding: 50px;
-	margin: auto;
-	text-align: center;
-	background-color: white;
+.wrapper2 .input {
+    width: 85%;
+    padding-left: 15px ;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 18px;
 }
 
-.sign-up-form h1{
-	color: #4b4276;
-	margin-bottom: 30px;
+.searchbtn .fas{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
 }
 
-.input-box{
-    background-color: rgb(243,245,249);
-	border-radius: 20px;
-	padding: 8px;
-	margin: 5px 0;
-	width: 100%;
-	border: 1px solid #999;
-	outline: none;
+/*button{
+    background-color: #e1dbff;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 35px;
+    padding: 8px 15px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}*/
+
+/*button{
+	background-color: #e1dbff;
+	color: black;
 	font-weight: bold;
-        font-size: 19px
-}
-
-h1{
-	margin-top: 20px;
-}
-
-::placeholder{
-	color: 4b4276;
-        text-align: center;
-}
-
-button{
-	background-color: #4b4276;
-	color: white;
-	font-weight: bold;
 	width: 100%;
-	padding: 10px;
+	padding: 0 60px;
+        padding-left: 20px;
+        padding-right: 20px;
 	border-radius: 20px;
 	font-size: 19px;
-	margin: 14px 0;
+	margin: 12PX;
 	border: none;
 	outline: none;
 	cursor: pointer;
+}*/
+
+*{
+	box-sizing: border-box;
+}
+
+.table{
+    margin-top: 40px;
+	width: 100%;
+	border-collapse: collapse;
+        top: 45%;
+}
+
+.table td,.table th{
+  padding:12px 15px;
+  border:1px solid white;
+  text-align: center;
+  font-size:16px;
+}
+
+.table th{
+	background-color: #4b4276;
+	color:#ffffff;
+}
+
+.table tbody tr:nth-child(even){
+	background-color: #f5f5f5;
+}
+
+
+
+@media(max-width: 500px){
+	.table thead{
+		display: none;
+	}
+
+	.table, .table tbody, .table tr, .table td{
+		display: block;
+		width: 100%;
+	}
+	.table tr{
+		margin-bottom:15px;
+	}
+	.table td{
+		text-align: right;
+		padding-left: 50%;
+		text-align: right;
+		position: relative;
+	}
+	.table td::before{
+		content: attr(data-label);
+		position: absolute;
+		left:0;
+		width: 50%;
+		padding-left:15px;
+		font-size:15px;
+		font-weight: bold;
+		text-align: left;
+	}
+}
+
+h2{
+    color: #6A5ACD;
+}
+
+.nav-area {
+       text-align:right;
+	}
+ .nav-area li a {
+		padding: 5px;
+		font-size: 15px;
+	}
+ .nav-area {
+		float: none;
+		margin-top: 0; 
+	}
+.nav-area {
+	float: right;
+	list-style: none;
+	margin-top: 30px;
+}
+.nav-area li {
+	display: inline-block;
+}
+.nav-area li a {
+	color:#0000CD;
+	text-decoration: none;
+	padding: 5px 20px;
+	font-family: poppins;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+.nav-area li a:hover {
+	background: #fff;
+	color: #333;
 }
         </style>
     </head>
@@ -178,8 +278,53 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Patient Information</h1>
-                            <form id="loginForm" accept="#">
-                                <h1>Coding</h1>
+                            <form method="get">
+                                <center>
+                                    <table class="table">
+                                        <tr>
+                                            <th>Login ID</th>
+                                            <th>Full Name</th>
+                                            <th>Address</th>
+                                            <th>Age</th>
+                                            <th>Mobile Number</th>
+                                            <th>Blood Group</th>
+                                            <th>Martial Status</th>
+                                            <th>Gender</th>
+                                            <th>Date Of Birth</th>
+                                            <th>Deceased</th>
+                                        </tr>
+                                        <%
+                                            try {
+                                                
+                                                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                String query = "SELECT `loginid`, `fullname`, `address`, `age`, `mobilenumber`, `bloodgroup`, `martialstatus`, `gender`, `dateofbirth`, `deceased` FROM `patient`";
+                                                Statement stat = con.createStatement();
+                                                ResultSet rs = stat.executeQuery(query);
+                                                while(rs.next()){
+                                        %>            
+                                        <tr>
+                                            <td><%=rs.getString("loginid")%></td>
+                                            <td><%=rs.getString("fullname")%></td>
+                                            <td><%=rs.getString("address")%></td>
+                                            <td><%=rs.getString("age")%></td>
+                                            <td><%=rs.getString("mobilenumber")%></td>
+                                            <td><%=rs.getString("bloodgroup")%></td>
+                                            <td><%=rs.getString("martialstatus")%></td>
+                                            <td><%=rs.getString("gender")%></td>
+                                            <td><%=rs.getString("dateofbirth")%></td>
+                                            <td><%=rs.getString("deceased")%></td>
+                                        </tr>
+                                        <%
+                                                }    
+                                            } catch (Exception e) {
+                                                
+                                                System.out.println(e.getMessage());
+                                                    
+                                            }
+                                        %>
+                                    </table>
+                                </center>
                             </form>
                         </div>
                     </div>

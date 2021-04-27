@@ -1,0 +1,16 @@
+SMAP
+patientInfo_jsp.java
+JSP
+*S JSP
+*F
++ 0 patientInfo.jsp
+View/receptionist/patientInfo.jsp
+*L
+5,292:48
+297,9:341
+305,2:350
+307,10:352,3
+317,2:382
+319,7:385
+325,11:392
+*E

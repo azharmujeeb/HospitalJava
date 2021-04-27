@@ -18,7 +18,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 
@@ -260,74 +259,74 @@ h2{
         <div class="mainContainer">
             <div class="wrapper">
 		<div class="sidebar">
-			<h2>View Appointment</h2>
-			<ul>
+                    <h2>View Appointment</h2>
+                    <ul>
                                 <li><a href="viewAppoinment.jsp"><i class="fas fa-calendar-check"></i>View Appointment</a></li>
 				<li><a href="appointment.jsp"><i class="fas fa-book-medical"></i>Book Appointment</a></li>
                                 <li><a href="cancelAppointment.jsp"><i class="fas fa-window-close"></i>Cancel Appointment</a></li>
                                 <li><a href="feedback.jsp"><i class="fas fa-comments"></i>Feedback</a></li>
-			</ul>
+                    </ul>
 		</div>
-		<div class="main_content">
+                <form>
+                    <div class="main_content">
                     <div class="info">
                         <div class="wrapper2">
                             <input type="text" class="input" name="idnumber" id ="idnumber"  placeholder="Type Your ID Number......">
                             <div class="searchbtn">
-                                <button type="button" id="searchbtn" class="btn">Search</button>
-                                <!--Dilhani's btn <input type="submit" name="submit" value="Search" class="box"  style="color: black">-->
+                                <button type="submit" id="searchbtn" class="btn">Search</button>
                             </div>
                         </div>
-			<div class="sign-up-form">
-                            <form method="get" >
-                                    <center>
-                                        <div class="filter"></div>
-                                       <table class="table" >
-                                           <th>Login ID</th>
-                                           <th>Full Name</th>
-                                           <th>Age</th>
-                                           <th>Mobile Number</th>
-                                           <th>Blood Group</th>
-                                           <th>Type of Sickness</th>
-                                           <th>Appointment Date</th>
-                                           <th>Appointment Time</th>
+                        <div class="sign-up-form">
+                            <form>
+                                <center>
+                                    <div class="filter">
+                                        <table class="table" >
+                                            <th>Login ID</th>
+                                            <th>Full Name</th>
+                                            <th>Age</th>
+                                            <th>Mobile Number</th>
+                                            <th>Blood Group</th>
+                                            <th>Type of Sickness</th>
+                                            <th>Appointment Date</th>
+                                            <th>Appointment Time</th>
 
+                                            <%    
+                                                try{
+                                                    Class.forName("com.mysql.jdbc.Driver");
+                                                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                    Statement stat = con.createStatement();
 
-                                        <%    
-                                      try{
-                                         Class.forName("com.mysql.jdbc.Driver");
-                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
-                                         Statement stat = con.createStatement();
+                                                    String idnumber = request.getParameter("idnumber");
+                                                    String sqlstr = "select * from appointment where loginid ='"+idnumber+"'";
+                                                    ResultSet rs = stat.executeQuery(sqlstr);
+                                                    while(rs.next()){
 
-                                         String idnumber = request.getParameter("loginid");
-                                         String sqlstr = "select * from appointment where idnumber='"+idnumber+"'";
-                                         ResultSet rs = stat.executeQuery(sqlstr);
-                                         while(rs.next()){
-
-                                         %>
-                                             <tr>
-                                                 <td><%=rs.getString("loginid")%></td>
-                                                 <td><%=rs.getString("fullname")%></td>
-                                                 <td><%=rs.getInt("age")%></td>
-                                                 <td><%=rs.getInt("mobilenumber")%></td>
-                                                 <td><%=rs.getString("bloodgroup")%></td>
-                                                 <td><%=rs.getString("typeofsickness")%></td>
-                                                 <td><%=rs.getString("appointmentdate")%></td>
-                                                 <td><%=rs.getString("appointmenttime")%></td>
-                                             </tr>
-                                       <%      
-                                         }
-                            }
-                                         catch(Exception e){
-                                                 System.out.println(e.getMessage());
-                                                 }
-                                 %>   
-                                       </table>                                                                 
-                                     </center>  
-                                </form>
-			</div>
-                    </div>
+                                            %>
+                                                        <tr>
+                                                            <td><%=rs.getString("loginid")%></td>
+                                                            <td><%=rs.getString("fullname")%></td>
+                                                            <td><%=rs.getString("age")%></td>
+                                                            <td><%=rs.getString("mobilenumber")%></td>
+                                                            <td><%=rs.getString("bloodgroup")%></td>
+                                                            <td><%=rs.getString("typeofsickness")%></td>
+                                                            <td><%=rs.getString("appointmentdate")%></td>
+                                                            <td><%=rs.getTime("appointmnettime")%></td>
+                                                        </tr>
+                                            <%      
+                                                    }
+                                                }catch(Exception e){
+                                                     System.out.println(e.getMessage());
+                                                }
+                                            %>   
+                                        </table> 
+                                    </div>
+                                </center>
+                            </form>
                         </div>
                     </div>
-		</div>
+                    </div>
+                </form>
+            </div>
+	</div>
     </body>
 </html>

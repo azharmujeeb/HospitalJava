@@ -7,6 +7,10 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -60,6 +64,38 @@ public class Update_Patient extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        try {
+            
+            String loginid = request.getParameter("loginid");
+            String address = request.getParameter("adddress");
+            String mobilenumber = request.getParameter("mobilenumber");
+            String martialstatus = request.getParameter("martialstatus");
+            String deceased = request.getParameter("deceased");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+            Statement stat = con.createStatement();
+            String query = "update patient set address = '"+address+"', mobilenumber = '"+mobilenumber+"', martialstatus = '"+martialstatus+"', deceased = '"+deceased+"' where loginid = '"+loginid+"'";
+            stat.execute(query);
+            System.out.println("Patient profile updated!");
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/updatePatient.jsp");
+            req.include(request, response);
+            
+            
+            
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/updatePatient.jsp");
+            req.include(request, response);
+            
+            
+        }
+        
     }
 
     /**

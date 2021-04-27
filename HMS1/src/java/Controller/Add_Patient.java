@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controller;
+
 import Model.AddPatientModel;
 import Model.DBCon;
 import java.io.IOException;
@@ -65,36 +66,36 @@ public class Add_Patient extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        //response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        AddPatientModel user = new AddPatientModel();
         
-        user.setFullname(request.getParameter("fullname"));
-        user.setLoginid(request.getParameter("loginid"));
-        user.setPassword(request.getParameter("password"));
-        user.setAddress(request.getParameter("address"));
-        user.setAge(request.getParameter("age"));
-        user.setMobilenumber(request.getParameter("mobilenumber"));
-        user.setBloodgroup(request.getParameter("bloodgroup"));
-        user.setMartailstatus(request.getParameter("martialstatus"));
-        user.setGender(request.getParameter("gender"));
-        user.setDateofbirth(request.getParameter("dateofbirth"));
-        user.setDeceased(request.getParameter("deceased"));
-        
-        if (user.registerPatient()) {
+        try {
+            String fullname = request.getParameter("fullname");
+            String loginid = request.getParameter("loginid");
+            String password = request.getParameter("password");
+            String address = request.getParameter("address");
+            String age = request.getParameter("age");
+            String mobilenumber = request.getParameter("mobilenumber");
+            String bloodgroup = request.getParameter("bloodgroup");
+            String martialstatus = request.getParameter("martialstatus");
+            String gender = request.getParameter("gender");
+            String dateofbirth = request.getParameter("dateofbirth");
+            String deceased = request.getParameter("deceased");
             
-            out.println("Success!");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+            java.sql.Statement stat = con.createStatement();
+            String query = "insert into patient values('"+fullname+"','"+loginid+"','"+password+"','"+address+"','"+age+"','"+mobilenumber+"','"+bloodgroup+"','"+martialstatus+"','"+gender+"','"+dateofbirth+"','"+deceased+"')";
+            stat.execute(query);
+            System.out.println("Recorded!");
             RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addPatient.jsp");
             req.include(request, response);
             
-        } else {
-            
-            out.println("Fail to add Patient");
-            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addDoctor.jsp");
+        } catch (Exception e) {
+            e.printStackTrace();
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/addPatient.jsp");
             req.include(request, response);
-            
         }
-        
     }
 
     /**

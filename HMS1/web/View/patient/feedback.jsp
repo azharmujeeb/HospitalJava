@@ -297,70 +297,49 @@ form textarea{
 			</ul>
 		</div>
 		<div class="main_content">
-                            <form id="loginForm" accept="#">
-                                 <section id="fancy-form">
-                                    <div class="container">
-                                     <div class="form-sections">
+                    <section id="fancy-form">
+                        <div class="container">
+                            <div class="form-sections">
+                                
+                                <div class="Form-left">
+                                    <h1>Get In Touch With Us</h1>
+                                    <p>Contact us for new services and updates. subscribe our news letter :)</p><br>
 
-                                       <div class="Form-left">
-                                         <h1>Get In Touch With Us</h1>
-                                         <p>Contact us for new services and updates. subscribe our news letter :)</p><br>
+                                    <h4>ADDRESS</h4>
+                                    <span>123, Main Street, Colombo</span>
+                                    <br><br>
 
-                                          <h4>ADDRESS</h4>
-                                          <span>123, Main Street, Colombo</span>
-                                          <br><br>
+                                    <h4>PHONE</h4>
+                                    <span>(+94)77 003 3300</span>
+                                    <br><br>
 
+                                    <h4>EMAIL</h4>
+                                    <span>ceylonhospital@gmail.com</span>
+                                    <br>
 
-                                         <h4>PHONE</h4>
-                                          <span>(+94)77 003 3300</span>
-                                          <br><br>
-
-                                        <h4>EMAIL</h4>
-                                        <span>ceylonhospital@gmail.com</span>
-                                        <br>
-
-
-                                           <a href="#" class="fa fa-facebook"></a>
-                                           <a href="#" class="fa fa-twitter"></a>
-                                           <a href="#" class="fa fa-google"></a>
-                                           <a href="#" class="fa fa-linkedin"></a>
-
-                                       </div>
-
-
-                                        <div class="Form-right">
-                                        <h1>Contact Us</h1>
-                                         
-
-                                         <form action="Feedback" method="post">
-                                           <h5>NAME</h5>
-                                           <input type="text" id="name" name="name"><br><br>
-                                           <h5>EMAIL</h5>
-                                           <input type="email" id="email" name="email"><br><br>
-                                           <h5>PHONE</h5>
-                                           <input type="number" id="number"name="number"><br><br>
-                                           <h5>YOUR COMMENTS</h5>
-                                           <textarea name="msg" id="msg" name="msg" cols="50" rows="7"></textarea><br>
-                                           <input type="submit" class="button" name="submit" id="submit" value="Send">
-
-
-                                         </form>
-                                       </div>
-                                     </div>
-                                     </div>
-
-
-                                 <!--<div id= "footer" style="text-align: center>
-                                 <ul class="nav-area">
-                                 <li><a href="#"   ONCLICK="window.location.href='index2.html'"><b><u>GO BACK</u></b></a></li>
-                                 </ul>
-                                 </div>-->
-
-                                   </section>
-                            </form>
+                                    <a href="#" class="fa fa-facebook"></a>
+                                    <a href="#" class="fa fa-twitter"></a>
+                                    <a href="#" class="fa fa-google"></a>
+                                    <a href="#" class="fa fa-linkedin"></a>
+                                </div>
+                                <div class="Form-right">
+                                    <h1>Contact Us</h1>
+                                    <form  method="post" action="${pageContext.request.contextPath}/feedback">
+                                        <h5>NAME</h5>
+                                        <input type="text" name="name"><br><br>
+                                        <h5>EMAIL</h5>
+                                        <input type="email" name="email"><br><br>
+                                        <h5>PHONE</h5>
+                                        <input type="number" name="phone"><br><br>
+                                        <h5>YOUR COMMENTS</h5>
+                                        <textarea name="comments" cols="50" rows="7"></textarea><br>
+                                        <input type="submit" class="button" name="submit" id="submit" value="Send">
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-		</div>
+                    </section>
+                </div>
             </div>
         </div>
     </body>

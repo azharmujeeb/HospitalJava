@@ -7,6 +7,10 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -60,6 +64,39 @@ public class Update_Room extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        try {
+            
+            String patientname = request.getParameter("patientname");
+            String doctorname = request.getParameter("doctorname");
+            String typeofsickness = request.getParameter("typeofsickness");
+            String typeofroom = request.getParameter("typeofroom");
+            String roomjoined = request.getParameter("roomjoined");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+            Statement stat = con.createStatement();
+            String query = "update room set doctorname = '"+doctorname+"', typeofsickness = '"+typeofsickness+"', typeofroom = '"+typeofroom+"', roomjoined = '"+roomjoined+"' where patientname = '"+patientname+"'";
+            stat.execute(query);
+            System.out.println("Room Updated successfully");
+            
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/updateRoom.jsp");
+            req.include(request, response);
+            
+            
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+            RequestDispatcher req = request.getRequestDispatcher("View/receptionist/updateRoom.jsp");
+            req.include(request, response);
+            
+        }
+        
+        
     }
 
     /**

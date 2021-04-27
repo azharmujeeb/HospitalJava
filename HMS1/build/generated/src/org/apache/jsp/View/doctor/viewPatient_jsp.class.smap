@@ -1,0 +1,16 @@
+SMAP
+viewPatient_jsp.java
+JSP
+*S JSP
+*F
++ 0 viewPatient.jsp
+View/doctor/viewPatient.jsp
+*L
+5,190:48
+195,9:239
+203,2:248
+205,10:250,3
+215,2:280
+217,7:283
+223,12:290
+*E

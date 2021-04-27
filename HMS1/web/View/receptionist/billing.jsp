@@ -4,6 +4,10 @@
     Author     : azhar
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -182,19 +186,33 @@ hr {
                     <div class="info">
 			<div class="sign-up-form">
                             <h1>Billing</h1>
-                            <form id="loginForm" accept="#">
+                            <form method="post" action="${pageContext.request.contextPath}/Add_Bill">
                                 <div>
-                                    <input type="text" class="input-box" id="fname" placeholder="Search by Full Name">
-                                    <button type="buttom" id="searchName" class="signup-btn">Search</button>
-                                </div>
-                                <div>
-                                    <input type="text" class="input-box" id="loginId" placeholder="Search by Login ID">
-                                    <button type="buttom" id="searchLoginId" class="signup-btn">Search</button>                                    
+                                    <select class="input-box" style="padding-left:120px;">
+                                    <option>Select Patient Name</option>
+                                    <%
+                                        try {
+                                            Class.forName("com.mysql.jdbc.Driver");
+                                            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                            Statement st = con.createStatement();
+                                            String query = "select fullname from patient";
+                                            ResultSet rs = st.executeQuery(query);
+                                            while(rs.next()){
+                                                %>
+                                                <option><%=rs.getString("fullname")%></option>
+                                                <%
+                                            }
+                                            
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                    %>
+                                </select>
                                 </div>
                                 <hr>
-                                <input type="number" class="input-box" id="days" placeholder="Number of Days Stayed">
-                                <input type="text" class="input-box" id="roomType" placeholder="Room Type">
-                                <input type="number" class="input-box" id="medicineFees" placeholder="Medicine Fees">
+                                <input type="number" class="input-box" name="daysstayed" placeholder="Number of Days Stayed">
+                                <input type="text" class="input-box" name="roomtype" placeholder="Room Type">
+                                <input type="number" class="input-box" name="medicinefees" placeholder="Medicine Fees">
                                 <button type="button" id="doneBilling" class="signup-btn">Bill</button>
                             </form>
 			</div>
