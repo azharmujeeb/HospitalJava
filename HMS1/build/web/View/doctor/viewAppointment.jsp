@@ -16,7 +16,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="Receptionist.css">
         <style id="receptionist">
             @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');
 

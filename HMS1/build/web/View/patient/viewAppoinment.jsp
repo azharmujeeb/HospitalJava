@@ -297,7 +297,7 @@ h2{
                                                     Statement stat = con.createStatement();
 
                                                     String idnumber = request.getParameter("idnumber");
-                                                    String sqlstr = "select * from appointment where idnumber='"+idnumber+"'";
+                                                    String sqlstr = "select * from appointment where loginid ='"+idnumber+"'";
                                                     ResultSet rs = stat.executeQuery(sqlstr);
                                                     while(rs.next()){
 
@@ -305,12 +305,12 @@ h2{
                                                         <tr>
                                                             <td><%=rs.getString("loginid")%></td>
                                                             <td><%=rs.getString("fullname")%></td>
-                                                            <td><%=rs.getInt("age")%></td>
-                                                            <td><%=rs.getInt("mobilenumber")%></td>
+                                                            <td><%=rs.getString("age")%></td>
+                                                            <td><%=rs.getString("mobilenumber")%></td>
                                                             <td><%=rs.getString("bloodgroup")%></td>
                                                             <td><%=rs.getString("typeofsickness")%></td>
                                                             <td><%=rs.getString("appointmentdate")%></td>
-                                                            <td><%=rs.getString("appointmenttime")%></td>
+                                                            <td><%=rs.getTime("appointmnettime")%></td>
                                                         </tr>
                                             <%      
                                                     }

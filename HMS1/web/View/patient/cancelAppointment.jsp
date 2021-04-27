@@ -164,7 +164,7 @@ button{
 				<li><a href="appointment.jsp"><i class="fas fa-book-medical"></i>Book Appointment</a></li>
                                 <li><a href="cancelAppointment.jsp"><i class="fas fa-window-close"></i>Cancel Appointment</a></li>
                                 <li><a href="feedback.jsp"><i class="fas fa-comments"></i>Feedback</a></li>
-			</ul>
+                    </ul>
 		</div>
 		<div class="main_content">
                     <div class="info">
