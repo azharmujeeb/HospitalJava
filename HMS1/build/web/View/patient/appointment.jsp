@@ -171,13 +171,13 @@ button{
                     <div class="info">
                         <div class="sign-up-form">
                             <h1>Book Appointment</h1>
-                            <form id="loginForm" accept="#">
-                                <input type="text" class="input-box" id="loginId" placeholder="Login ID">
-                                <input type="text" class="input-box" id="fname" placeholder="Full Name">
-                                <input type="text" class="input-box" id="age" placeholder="Age">
-                                <input type="number" class="input-box" id="mobileNumber" placeholder="Mobile Number">
-                                <input type="text" class="input-box" id="bloodGroup" placeholder="Blood Group">
-                                <select name="categery" name="categery" id="categery" placeholder="Category" class="input-box" style="padding-left: 150px; color: grey;">
+                            <form method="post" action="${pageContext.request.contextPath}/Book_Appointment">
+                                <input type="text" class="input-box" name="loginid" placeholder="Login ID">
+                                <input type="text" class="input-box" name="fullname" placeholder="Full Name">
+                                <input type="text" class="input-box" age="age" placeholder="Age">
+                                <input type="number" class="input-box" name="mobilenumber" placeholder="Mobile Number">
+                                <input type="text" class="input-box" name="bloodgroup" placeholder="Blood Group">
+                                <select name="categery" placeholder="Category" class="input-box" style="padding-left: 150px; color: grey;">
                                     <option>Type of Sickness</option>
                                     <option value="allergies">Allergies</option>
                                     <option value="coldAndFlu">Colds and Flu</option>
@@ -187,9 +187,9 @@ button{
                                     <option value="stomachAches">Stomach Aches</option>
                                     <option value="other">Other</option>
                                 </select>
-                                <input type="date" class="input-box" id="appointmentDate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="text-align: center; color: grey;">
-                                <input type="time" class="input-box" id="appointmnetTime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')" style="text-align: center; color: grey;">
-                                <button type="button" id="addDoctor" class="signup-btn">Book Appointment</button>
+                                <input type="text" class="input-box" name="appointmentdate" placeholder="Appointment Date" onfocus="(this.type='date')" onblur="(this.type='text')" style="text-align: center; color: grey;">
+                                <input type="text" class="input-box" name="appointmnettime" placeholder="Appointment Time" onfocus="(this.type='time')" onblur="(this.type='text')" style="text-align: center; color: grey;">
+                                <button type="submit" id="addDoctor" class="signup-btn">Book Appointment</button>
                             </form>
                         </div>
                     </div>

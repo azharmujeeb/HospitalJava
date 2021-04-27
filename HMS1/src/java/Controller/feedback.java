@@ -7,6 +7,9 @@ package Controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author azhar
  */
-public class Doctor_info extends HttpServlet {
+public class feedback extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -60,6 +63,39 @@ public class Doctor_info extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        try {
+            
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String phone = request.getParameter("phone");
+            String comments = request.getParameter("comments");
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+            java.sql.Statement stat = con.createStatement();
+            String query = "INSERT INTO `feedback`(`name`, `email`, `phone`, `comments`) VALUES ('"+name+"','"+email+"','"+phone+"','"+comments+"')";
+            stat.execute(query);
+            System.out.println("Recorded!");
+            
+            RequestDispatcher req = request.getRequestDispatcher("View/patient/feedback.jsp");
+            req.include(request, response);
+            
+            
+            
+        } catch (Exception e) {
+            
+            e.printStackTrace();
+            RequestDispatcher req = request.getRequestDispatcher("View/patient/feedback.jsp");
+            req.include(request, response);
+            
+        }
+        
+        
     }
 
     /**

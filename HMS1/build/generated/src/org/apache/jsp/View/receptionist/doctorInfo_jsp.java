@@ -55,7 +55,7 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Receptionist</title>\n");
+      out.write("        <title>View Doctor</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -143,7 +143,8 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tmargin-bottom: 20px;\n");
       out.write("}\n");
       out.write("        </style>\n");
-      out.write("                <style>\n");
+      out.write("        \n");
+      out.write("        <style id=\"dilhani\">\n");
       out.write(".wrapper2{\n");
       out.write("    position: absolute;\n");
       out.write("    top: 30%;\n");
@@ -174,7 +175,7 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    font-size: 18px;\n");
       out.write("}\n");
       out.write("\n");
-      out.write("button{\n");
+      out.write("/*button{\n");
       out.write("    background-color: #e1dbff;\n");
       out.write("    font-weight: bold;\n");
       out.write("    font-size: 20px;\n");
@@ -183,7 +184,7 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    border: none;\n");
       out.write("    outline: none;\n");
       out.write("    cursor: pointer;\n");
-      out.write("}\n");
+      out.write("}*/\n");
       out.write("\n");
       out.write("/*button{\n");
       out.write("\tbackground-color: #e1dbff;\n");
@@ -206,7 +207,7 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("}\n");
       out.write("\n");
       out.write(".table{\n");
-      out.write("    margin-top: 30px;\n");
+      out.write("    margin-top: 40px;\n");
       out.write("\twidth: 100%;\n");
       out.write("\tborder-collapse: collapse;\n");
       out.write("        top: 45%;\n");
@@ -323,14 +324,25 @@ public final class doctorInfo_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            <form method=\"get\" >\n");
       out.write("                                <center>\n");
       out.write("                                    <table class=\"table\">\n");
-      out.write("                                        \n");
+      out.write("                                        <tr>\n");
+      out.write("                                            <th>Login ID</th>\n");
+      out.write("                                            <th>Full Name</th>\n");
+      out.write("                                            <th>Address</th>\n");
+      out.write("                                            <th>Age</th>\n");
+      out.write("                                            <th>Mobile Number</th>\n");
+      out.write("                                            <th>Gender</th>\n");
+      out.write("                                            <th>Martial Status</th>\n");
+      out.write("                                            <th>Date Of Birth</th>\n");
+      out.write("                                            <th>Qualification</th>\n");
+      out.write("                                            <th>Date Joined</th>\n");
+      out.write("                                        </tr>\n");
       out.write("                                        ");
 
                                             try {
                                                 
                                                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsytem","root","");
-                                                String query = "SELECT loginid, fullname, address, age, mobilenumber, gender, martialstatus, dateofbirth, qualification, datejoined FROM doctor";
+                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                String query = "SELECT `loginid`, `fullname`, `address`, `age`, `mobilenumber`, `gender`, `martialstatus`, `dateofbirth`, `qualification`, `datajoined` FROM `doctor`";
                                                 Statement stat = con.createStatement();
                                                 ResultSet rs = stat.executeQuery(query);
                                                 while(rs.next()){

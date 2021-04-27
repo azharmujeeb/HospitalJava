@@ -12,7 +12,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Receptionist</title>
+        <title>View Doctor</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://kit.fontawesome.com/ea60233838.js" crossorigin="anonymous"></script>
@@ -100,7 +100,8 @@ body{
 	margin-bottom: 20px;
 }
         </style>
-                <style>
+        
+        <style id="dilhani">
 .wrapper2{
     position: absolute;
     top: 30%;
@@ -131,7 +132,7 @@ body{
     font-size: 18px;
 }
 
-button{
+/*button{
     background-color: #e1dbff;
     font-weight: bold;
     font-size: 20px;
@@ -140,7 +141,7 @@ button{
     border: none;
     outline: none;
     cursor: pointer;
-}
+}*/
 
 /*button{
 	background-color: #e1dbff;
@@ -163,7 +164,7 @@ button{
 }
 
 .table{
-    margin-top: 30px;
+    margin-top: 40px;
 	width: 100%;
 	border-collapse: collapse;
         top: 45%;
@@ -296,8 +297,8 @@ h2{
                                             try {
                                                 
                                                 Class.forName("com.mysql.jdbc.Driver").newInstance();
-                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsytem","root","");
-                                                String query = "SELECT loginid, fullname, address, age, mobilenumber, gender, martialstatus, dateofbirth, qualification, datejoined FROM doctor";
+                                                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                String query = "SELECT `loginid`, `fullname`, `address`, `age`, `mobilenumber`, `gender`, `martialstatus`, `dateofbirth`, `qualification`, `datajoined` FROM `doctor`";
                                                 Statement stat = con.createStatement();
                                                 ResultSet rs = stat.executeQuery(query);
                                                 while(rs.next()){
@@ -312,7 +313,7 @@ h2{
                                             <td><%=rs.getString("martialstatus")%></td>
                                             <td><%=rs.getString("dateofbirth")%></td>
                                             <td><%=rs.getString("qualification")%></td>
-                                            <td><%=rs.getString("datejoined")%></td>
+                                            <td><%=rs.getString("datajoined")%></td>
                                         </tr>
                                         <%
                                                 }    

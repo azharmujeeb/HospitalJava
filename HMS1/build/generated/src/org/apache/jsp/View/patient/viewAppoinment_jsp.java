@@ -63,7 +63,6 @@ public final class viewAppoinment_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
-      out.write("        <link rel=\"stylesheet\" href=\"Receptionist.css\">\n");
       out.write("        <style id=\"receptionist\">\n");
       out.write("            @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&display=swap');\n");
       out.write("\n");
@@ -305,95 +304,95 @@ public final class viewAppoinment_jsp extends org.apache.jasper.runtime.HttpJspB
       out.write("        <div class=\"mainContainer\">\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("\t\t<div class=\"sidebar\">\n");
-      out.write("\t\t\t<h2>View Appointment</h2>\n");
-      out.write("\t\t\t<ul>\n");
+      out.write("                    <h2>View Appointment</h2>\n");
+      out.write("                    <ul>\n");
       out.write("                                <li><a href=\"viewAppoinment.jsp\"><i class=\"fas fa-calendar-check\"></i>View Appointment</a></li>\n");
       out.write("\t\t\t\t<li><a href=\"appointment.jsp\"><i class=\"fas fa-book-medical\"></i>Book Appointment</a></li>\n");
       out.write("                                <li><a href=\"cancelAppointment.jsp\"><i class=\"fas fa-window-close\"></i>Cancel Appointment</a></li>\n");
       out.write("                                <li><a href=\"feedback.jsp\"><i class=\"fas fa-comments\"></i>Feedback</a></li>\n");
-      out.write("\t\t\t</ul>\n");
+      out.write("                    </ul>\n");
       out.write("\t\t</div>\n");
-      out.write("\t\t<div class=\"main_content\">\n");
+      out.write("                <form>\n");
+      out.write("                    <div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"wrapper2\">\n");
       out.write("                            <input type=\"text\" class=\"input\" name=\"idnumber\" id =\"idnumber\"  placeholder=\"Type Your ID Number......\">\n");
       out.write("                            <div class=\"searchbtn\">\n");
-      out.write("                                <button type=\"button\" id=\"searchbtn\" class=\"btn\">Search</button>\n");
-      out.write("                                <!--Dilhani's btn <input type=\"submit\" name=\"submit\" value=\"Search\" class=\"box\"  style=\"color: black\">-->\n");
+      out.write("                                <button type=\"submit\" id=\"searchbtn\" class=\"btn\">Search</button>\n");
       out.write("                            </div>\n");
       out.write("                        </div>\n");
-      out.write("\t\t\t<div class=\"sign-up-form\">\n");
-      out.write("                            <form method=\"get\" >\n");
-      out.write("                                    <center>\n");
-      out.write("                                        <div class=\"filter\"></div>\n");
-      out.write("                                       <table class=\"table\" >\n");
-      out.write("                                           <th>Login ID</th>\n");
-      out.write("                                           <th>Full Name</th>\n");
-      out.write("                                           <th>Age</th>\n");
-      out.write("                                           <th>Mobile Number</th>\n");
-      out.write("                                           <th>Blood Group</th>\n");
-      out.write("                                           <th>Type of Sickness</th>\n");
-      out.write("                                           <th>Appointment Date</th>\n");
-      out.write("                                           <th>Appointment Time</th>\n");
+      out.write("                        <div class=\"sign-up-form\">\n");
+      out.write("                            <form>\n");
+      out.write("                                <center>\n");
+      out.write("                                    <div class=\"filter\">\n");
+      out.write("                                        <table class=\"table\" >\n");
+      out.write("                                            <th>Login ID</th>\n");
+      out.write("                                            <th>Full Name</th>\n");
+      out.write("                                            <th>Age</th>\n");
+      out.write("                                            <th>Mobile Number</th>\n");
+      out.write("                                            <th>Blood Group</th>\n");
+      out.write("                                            <th>Type of Sickness</th>\n");
+      out.write("                                            <th>Appointment Date</th>\n");
+      out.write("                                            <th>Appointment Time</th>\n");
       out.write("\n");
-      out.write("\n");
-      out.write("                                        ");
+      out.write("                                            ");
     
-                                      try{
-                                         Class.forName("com.mysql.jdbc.Driver");
-                                         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
-                                         Statement stat = con.createStatement();
+                                                try{
+                                                    Class.forName("com.mysql.jdbc.Driver");
+                                                    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem","root","");
+                                                    Statement stat = con.createStatement();
 
-                                         String idnumber = request.getParameter("loginid");
-                                         String sqlstr = "select * from appointment where idnumber='"+idnumber+"'";
-                                         ResultSet rs = stat.executeQuery(sqlstr);
-                                         while(rs.next()){
+                                                    String idnumber = request.getParameter("idnumber");
+                                                    String sqlstr = "select * from appointment where idnumber='"+idnumber+"'";
+                                                    ResultSet rs = stat.executeQuery(sqlstr);
+                                                    while(rs.next()){
 
-                                         
+                                            
       out.write("\n");
-      out.write("                                             <tr>\n");
-      out.write("                                                 <td>");
+      out.write("                                                        <tr>\n");
+      out.write("                                                            <td>");
       out.print(rs.getString("loginid"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
+      out.write("                                                            <td>");
       out.print(rs.getString("fullname"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
-      out.print(rs.getString("age"));
+      out.write("                                                            <td>");
+      out.print(rs.getInt("age"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
-      out.print(rs.getString("mobilenumber"));
+      out.write("                                                            <td>");
+      out.print(rs.getInt("mobilenumber"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
+      out.write("                                                            <td>");
       out.print(rs.getString("bloodgroup"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
+      out.write("                                                            <td>");
       out.print(rs.getString("typeofsickness"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
+      out.write("                                                            <td>");
       out.print(rs.getString("appointmentdate"));
       out.write("</td>\n");
-      out.write("                                                 <td>");
+      out.write("                                                            <td>");
       out.print(rs.getString("appointmenttime"));
       out.write("</td>\n");
-      out.write("                                             </tr>\n");
-      out.write("                                       ");
+      out.write("                                                        </tr>\n");
+      out.write("                                            ");
       
-                                         }
-                            }
-                                         catch(Exception e){
-                                                 System.out.println(e.getMessage());
-                                                 }
-                                 
+                                                    }
+                                                }catch(Exception e){
+                                                     System.out.println(e.getMessage());
+                                                }
+                                            
       out.write("   \n");
-      out.write("                                       </table>                                                                 \n");
-      out.write("                                     </center>  \n");
-      out.write("                                </form>\n");
-      out.write("\t\t\t</div>\n");
-      out.write("                    </div>\n");
+      out.write("                                        </table> \n");
+      out.write("                                    </div>\n");
+      out.write("                                </center>\n");
+      out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
-      out.write("\t\t</div>\n");
+      out.write("                    </div>\n");
+      out.write("                </form>\n");
+      out.write("            </div>\n");
+      out.write("\t</div>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
