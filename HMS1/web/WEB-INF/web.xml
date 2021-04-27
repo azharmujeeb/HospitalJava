@@ -56,6 +56,10 @@
         <servlet-name>Patient_Signin</servlet-name>
         <servlet-class>Controller.Patient_Signin</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Doctor_Signin</servlet-name>
+        <servlet-class>Controller.Doctor_Signin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Update_Doctor</servlet-name>
         <url-pattern>/Update_Doctor</url-pattern>
@@ -111,6 +115,10 @@
     <servlet-mapping>
         <servlet-name>Patient_Signin</servlet-name>
         <url-pattern>/Patient_Signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Doctor_Signin</servlet-name>
+        <url-pattern>/Doctor_Signin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

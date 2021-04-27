@@ -16,7 +16,7 @@ public class PatientLoginDao {
         String dbName = "hmsystem";
         String driver = "com.mysql.jdbc.Driver";
         String userName = "root";
-        String pass = "password";
+        String pass = "";
         try {
             Class.forName(driver).newInstance();
             conn = DriverManager.getConnection(url + dbName, userName, pass);
