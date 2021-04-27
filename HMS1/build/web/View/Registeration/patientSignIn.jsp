@@ -82,11 +82,11 @@ button{
                             <div class="info">
                                     <div class="sign-up-form">
                                             <h1>Patient Login</h1>
-                                            <form id="loginForm" method="">
-                                                    <input type="text" class="input-box" id="loginId" placeholder="Login Id">
-                                                    <input type="password" class="input-box" id="pass" placeholder="Enter your password">
+                                            <form action="${pageContext.request.contextPath}/Patient_Signin" method="post">
+                                                    <input type="text" class="input-box" name="loginid" placeholder="Login Id">
+                                                    <input type="password" class="input-box" name="password" placeholder="Enter your password">
                                                     <p><span><input type="checkbox"></span> I agree to the terms and conditions.</p>
-                                                    <button type="button" id="loginbtn" class="signup-btn">Login</button>
+                                                    <button type="submit" id="loginbtn" class="signup-btn">Login</button>
                                             </form>
                                     </div>
                             </div>

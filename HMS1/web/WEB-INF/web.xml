@@ -48,6 +48,14 @@
         <servlet-name>Update_Doctor2</servlet-name>
         <servlet-class>Controller.Update_Doctor2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Receptionist_Signin</servlet-name>
+        <servlet-class>Controller.Receptionist_Signin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Patient_Signin</servlet-name>
+        <servlet-class>Controller.Patient_Signin</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Update_Doctor</servlet-name>
         <url-pattern>/Update_Doctor</url-pattern>
@@ -95,6 +103,14 @@
     <servlet-mapping>
         <servlet-name>Update_Doctor2</servlet-name>
         <url-pattern>/Update_Doctor2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Receptionist_Signin</servlet-name>
+        <url-pattern>/Receptionist_Signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Patient_Signin</servlet-name>
+        <url-pattern>/Patient_Signin</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
