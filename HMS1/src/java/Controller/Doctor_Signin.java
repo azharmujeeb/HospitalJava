@@ -75,7 +75,7 @@ public class Doctor_Signin extends HttpServlet {
             String p = request.getParameter("password");
             
             HttpSession session = request.getSession(false);
-            session.getAttribute("loginid",l);
+            //session.getAttribute("loginid",l);
             
             PatientLoginDao user = new  PatientLoginDao();
             
