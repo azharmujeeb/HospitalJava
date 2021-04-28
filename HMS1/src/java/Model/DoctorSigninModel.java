@@ -1,9 +1,13 @@
 
 package Model;
 
-import java.sql.*;
+import com.mysql.jdbc.PreparedStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-public class PatientLoginDao {
+public class DoctorSigninModel {
     
     private String loginid, password;
 
@@ -29,7 +33,7 @@ public class PatientLoginDao {
         Class.forName("com.mysql.jdbc.Driver");
         
         try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/hmsystem", "root", "");
-                com.mysql.jdbc.PreparedStatement ps = (com.mysql.jdbc.PreparedStatement) con.prepareStatement("select * from patient where loginid = ? and password = ?")) 
+                PreparedStatement ps = (PreparedStatement) con.prepareStatement("select * from doctor where loginid = ? and password = ?")) 
         {
                 ps.setString(1, this.loginid);
                 ps.setString(2, this.password);
@@ -46,8 +50,8 @@ public class PatientLoginDao {
         }
         
         return status;
-        
     }
     
+    
+    
 }
-

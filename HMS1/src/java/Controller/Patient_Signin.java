@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.DoctorSigninModel;
 import Model.PatientLoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -64,26 +65,33 @@ public class Patient_Signin extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        response.setContentType("text/html");  
-        try (PrintWriter out = response.getWriter()) {
-            String n=request.getParameter("loginid");
-            String p=request.getParameter("password");  
+        String loginid = request.getParameter("loginid");
+        String password = request.getParameter("password");
+        PatientLoginDao user = new PatientLoginDao();
+        user.setLoginid(loginid);
+        user.setPassword(password);
+        
+        try {
             
-            HttpSession session = request.getSession(false);
-            session.setAttribute("loginid",n);
-            
-            PatientLoginDao user = new PatientLoginDao();
-            
-            if(PatientLoginDao.validate(n,p)){
-                RequestDispatcher rd=request.getRequestDispatcher("View/patient.jsp");
-                rd.forward(request,response);
-            }
-            else{
-                out.print("<p style=\"color:red\">Sorry username or password error, click back to go back to login page</p>");
+            if (user.validate(loginid, password)) {
+                
+                HttpSession session = request.getSession();
+                session.setAttribute("loginid", loginid);
+                response.sendRedirect("View/patient.jsp");
+                
+            } else {
+                
+                HttpSession session = request.getSession();
+                session.setAttribute("loginid", loginid);
+                response.sendRedirect("View/Registeration/patientSignIn.jsp");
                 
             }
+            
+        } catch (Exception e) {
+            
+           e.printStackTrace();
+            
         }
-        
         
         
         

@@ -121,9 +121,9 @@ public final class patientSignIn_jsp extends org.apache.jasper.runtime.HttpJspBa
       out.write("                            <div class=\"info\">\n");
       out.write("                                    <div class=\"sign-up-form\">\n");
       out.write("                                            <h1>Patient Login</h1>\n");
-      out.write("                                            <form action=\"");
+      out.write("                                            <form method=\"post\" action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/Patient_Signin\" method=\"post\">\n");
+      out.write("/Patient_Signin\">\n");
       out.write("                                                    <input type=\"text\" class=\"input-box\" name=\"loginid\" placeholder=\"Login Id\">\n");
       out.write("                                                    <input type=\"password\" class=\"input-box\" name=\"password\" placeholder=\"Enter your password\">\n");
       out.write("                                                    <p><span><input type=\"checkbox\"></span> I agree to the terms and conditions.</p>\n");

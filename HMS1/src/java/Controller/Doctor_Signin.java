@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.DoctorSigninModel;
 import Model.PatientLoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,6 +15,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 
 /**
  *
@@ -64,36 +66,33 @@ public class Doctor_Signin extends HttpServlet {
             throws ServletException, IOException {
         processRequest(request, response);
         
-        
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
+        String loginid = request.getParameter("loginid");
+        String password = request.getParameter("password");
+        DoctorSigninModel user = new DoctorSigninModel();
+        user.setLoginid(loginid);
+        user.setPassword(password);
         
         try {
             
-            
-            String l = request.getParameter("loginid");
-            String p = request.getParameter("password");
-            
-            HttpSession session = request.getSession(false);
-            //session.getAttribute("loginid",l);
-            
-            PatientLoginDao user = new  PatientLoginDao();
-            
-            if (user.validate(l,p)) {
-                RequestDispatcher req = request.getRequestDispatcher("View/doctor.jsp");
-                req.include(request, response);
+            if (user.validate(loginid, password)) {
+                
+                HttpSession session = request.getSession();
+                session.setAttribute("loginid", loginid);
+                response.sendRedirect("View/doctor.jsp");
+                
             } else {
                 
-                RequestDispatcher req = request.getRequestDispatcher("View/doctor.jsp");
-                req.include(request, response);
+                HttpSession session = request.getSession();
+                session.setAttribute("loginid", loginid);
+                response.sendRedirect("View/Registeration/doctorSignIn.jsp");
                 
             }
             
-            
-            
         } catch (Exception e) {
+            
+           e.printStackTrace();
+            
         }
-        
         
     }
 
