@@ -1,10 +1,10 @@
-package org.apache.jsp.View.patient;
+package org.apache.jsp.View;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class appointment_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class receptionist_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -47,7 +47,7 @@ public final class appointment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Book Appointment</title>\n");
+      out.write("        <title>Receptionist</title>\n");
       out.write("        <meta charset=\"UTF-8\">\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n");
       out.write("        <script src=\"https://kit.fontawesome.com/ea60233838.js\" crossorigin=\"anonymous\"></script>\n");
@@ -183,7 +183,7 @@ public final class appointment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\tbackground-color: #4b4276;\n");
       out.write("\tcolor: white;\n");
       out.write("\tfont-weight: bold;\n");
-      out.write("\twidth: 68%;\n");
+      out.write("\twidth: 100%;\n");
       out.write("\tpadding: 10px;\n");
       out.write("\tborder-radius: 20px;\n");
       out.write("\tfont-size: 19px;\n");
@@ -198,40 +198,25 @@ public final class appointment_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <div class=\"mainContainer\">\n");
       out.write("            <div class=\"wrapper\">\n");
       out.write("\t\t<div class=\"sidebar\">\n");
-      out.write("\t\t\t<h2>Book Appointment</h2>\n");
+      out.write("\t\t\t<h2>Receptionist</h2>\n");
       out.write("\t\t\t<ul>\n");
-      out.write("                                <li><a href=\"viewAppoinment.jsp\"><i class=\"fas fa-calendar-check\"></i>View Appointment</a></li>\n");
-      out.write("\t\t\t\t<li><a href=\"appointment.jsp\"><i class=\"fas fa-book-medical\"></i>Book Appointment</a></li>\n");
-      out.write("                                <li><a href=\"cancelAppointment.jsp\"><i class=\"fas fa-window-close\"></i>Cancel Appointment</a></li>\n");
-      out.write("                                <li><a href=\"feedback.jsp\"><i class=\"fas fa-comments\"></i>Feedback</a></li>\n");
-      out.write("                    </ul>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/addPatient.jsp\"><i class=\"fas fa-user-plus\"></i> Add Patient</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/patientInfo.jsp\"><i class=\"fas fa-users\"></i> Patient Information</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/updatePatient.jsp\"><i class=\"fas fa-pen\"></i> Update Patient</a></li>\n");
+      out.write("                                <li><a href=\"receptionist/addDoctor.jsp\"><i class=\"fas fa-user-nurse\"></i> Add Doctor</a></li>\n");
+      out.write("                                <li><a href=\"receptionist/updateDoctor.jsp\"><i class=\"fas fa-pen\"></i> Update Doctor</a></li>\n");
+      out.write("                                <li><a href=\"receptionist/doctorInfo.jsp\"><i class=\"fas fa-users\"></i>Doctor Information</a></li>\n");
+      out.write("                                <li><a href=\"receptionist/viewAppointment.jsp\"><i class=\"fas fa-file-invoice\"></i> View Appointment</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/addRoom.jsp\"><i class=\"fas fa-hospital\"></i> Add Room</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/updateRoom.jsp\"><i class=\"fas fa-pen\"></i> Update Room</a></li>\n");
+      out.write("                                <li><a href=\"receptionist/billing.jsp\"><i class=\"fas fa-money-bill\"></i> Billing</a></li>\n");
+      out.write("\t\t\t\t<li><a href=\"receptionist/patientReport.jsp\"><i class=\"fas fa-file-invoice\"></i> Patient Report</a></li>\n");
+      out.write("\t\t\t</ul>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
       out.write("                        <div class=\"sign-up-form\">\n");
-      out.write("                            <h1>Book Appointment</h1>\n");
-      out.write("                            <form method=\"post\" action=\"");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/Book_Appointment\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"loginid\" placeholder=\"Login ID\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"fullname\" placeholder=\"Full Name\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"age\" placeholder=\"Age\">\n");
-      out.write("                                <input type=\"number\" class=\"input-box\" name=\"mobilenumber\" placeholder=\"Mobile Number\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"bloodgroup\" placeholder=\"Blood Group\">\n");
-      out.write("                                <select name=\"typeofsickness\" placeholder=\"Category\" class=\"input-box\" style=\"padding-left: 150px; color: grey;\">\n");
-      out.write("                                    <option>Type of Sickness</option>\n");
-      out.write("                                    <option value=\"allergies\">Allergies</option>\n");
-      out.write("                                    <option value=\"Cold And Flu\">Colds and Flu</option>\n");
-      out.write("                                    <option value=\"conjuctivitis\">Conjunctivitis</option>\n");
-      out.write("                                    <option value=\"diarrhea\">Diarrhea</option>\n");
-      out.write("                                    <option value=\"headaches\">Headaches</option>\n");
-      out.write("                                    <option value=\"stomachAches\">Stomach Aches</option>\n");
-      out.write("                                    <option value=\"other\">Other</option>\n");
-      out.write("                                </select>\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"appointmentdate\" placeholder=\"Appointment Date\" onfocus=\"(this.type='date')\" onblur=\"(this.type='text')\" style=\"text-align: center; color: grey;\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"appointmnettime\" placeholder=\"Appointment Time\" onfocus=\"(this.type='time')\" onblur=\"(this.type='text')\" style=\"text-align: center; color: grey;\">\n");
-      out.write("                                <button type=\"submit\" id=\"addDoctor\" class=\"signup-btn\">Book Appointment</button>\n");
-      out.write("                            </form>\n");
+      out.write("                            <h1>Welcome</h1>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");
       out.write("\t\t</div>\n");

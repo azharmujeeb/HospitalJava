@@ -86,8 +86,8 @@ html {
     <body>
         <div class="about-section">
             <h1>Ceylon Hospital</h1>
-            <p>Some text about who we are and what we do.</p>
-            <p>Resize the browser window to see that this page is responsive by the way.</p>
+            <p>Welcome to Ceylon Hospital.</p>
+            <p>Our doctors and staff ensure that your needs are carefully and lovingly looked after.</p>
         </div>
 
         <h2 style="text-align:center">Our Team</h2>
@@ -97,8 +97,9 @@ html {
                 <img src="" alt="J A Mujeeb" style="width:100%">
                 <div class="container">
                   <h2>J A Mujeeb</h2>
-                  <p class="title">Receptionist and Admin</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p class="title">Project Leader</p>
+                  <p>Plymout ID : 10707284</p>
+                  <p>10707284@students.plymouth.ac.uk</p>
                   <p>amujeeb@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -111,7 +112,8 @@ html {
                 <div class="container">
                   <h2>G M D D Ratnayake</h2>
                   <p class="title">Receptionist and Admin</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Plymout ID : 10707351</p>
+                  <p>10707351@students.plymouth.ac.uk</p>
                   <p>gmddratnayake@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -124,7 +126,8 @@ html {
                 <div class="container">
                   <h2>S O Perera</h2>
                   <p class="title">Report Module</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Plymout ID : 10707315</p>
+                  <p>10707315@students.plymouth.ac.uk</p>
                   <p>soperera@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -137,7 +140,8 @@ html {
                 <div class="container">
                   <h2>M D A Medhavi</h2>
                   <p class="title">Doctor</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Plymout ID : 10707278</p>
+                  <p>10707278students.plymouth.ac.uk</p>
                   <p>mdamedhavi@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -150,7 +154,8 @@ html {
                 <div class="container">
                   <h2>S S N S Nevins</h2>
                   <p class="title">Bill Module</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Plymout ID : 10707291</p>
+                  <p>10707291@students.plymouth.ac.uk</p>
                   <p>snsnevins@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
@@ -163,7 +168,8 @@ html {
                 <div class="container">
                   <h2>P L Dilhani</h2>
                   <p class="title">Patient</p>
-                  <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                  <p>Plymout ID : 10709402</p>
+                  <p>10709402@students.plymouth.ac.uk</p>
                   <p>pldilhani@students.nsbm.ac.lk</p>
                   <p><button class="button">Contact</button></p>
                 </div>
