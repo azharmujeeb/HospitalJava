@@ -96,6 +96,69 @@ body{
 	margin-bottom: 20px;
 }
         </style>
+            <style>
+        h1{
+            text-align:center ;
+            color: rgb(106, 87, 161);
+        }
+
+        .logo {
+		float: none;
+		width: 30%;
+		text-align: center;
+		margin: auto;
+	}
+
+    .logo {
+	float: left; 
+    }
+    
+    .logo img {
+	width: 40%;
+	padding: 15px 0;
+    } 
+    
+
+    h5,h4{
+        color:rgb(35, 35, 39) ;
+        font-family:'Times New Roman', Times, serif ;
+        padding: 20px;  
+    }
+    table{
+        width:70% ;
+        font-family:'Times New Roman', Times, serif ;
+    }
+
+    </style>
+
+    <style id="main_content">
+        .main_content{
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: rgb(243,245,249);
+}
+
+.sign-up-form{
+	width: 80%;
+	box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+	background: #fff;
+	padding: 50px;
+	margin: auto;
+	text-align: left;
+	background-color: white;
+}
+
+.sign-up-form h1{
+	color: #4b4276;
+	margin-bottom: 30px;
+}
+
+h1{
+	margin-top: 20px;
+}
+
+</style>
     </head>
     <body>
         <div class="mainContainer">
@@ -117,7 +180,94 @@ body{
 			</ul>
 		</div>
 		<div class="main_content">
-			
+                    <div class="info">
+                        <div class="sign-up-form">
+                            
+                            <h1>Laboratory Report</h1>
+                            
+                            <div class="wrapper">
+                                
+                                <div class="logo">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPQBVE8xEzQ9sc0yjRNOn7UyIvPcKztJ6oOA&usqp=CAU"   alt="logo">
+                                </div>
+                                <h5>Address : No 23, Colombo Road,Vijerama</h5><br>
+                                <h5>Tel : +94751234123/ +94771231230</h5><br>
+                                <h5>Fax : +94123451234</h5><br>
+                                <h5>Email : ceylonhospital@gmail.com</h5><br>
+                                <br>
+                            </div>
+                            
+                            <br>
+                            <br>
+
+                            <p>
+                                <b>
+                                    <h4>
+                                        &nbsp; &nbsp;  &nbsp; Patient Name &nbsp;<br>
+                                        &nbsp; &nbsp;  &nbsp; REF. Doctor  &nbsp; :<br>
+                                        &nbsp; &nbsp;  &nbsp; Service REF No &nbsp; :<br>
+                                        &nbsp; &nbsp;  &nbsp; Age &nbsp; :<br>
+                                        &nbsp; &nbsp;  &nbsp; Sample Collected &nbsp;:<br>
+                                        &nbsp; &nbsp;  &nbsp; Printed Date &nbsp;:
+                                    </h4>
+                                </b>
+                            </p>
+
+                         <br>
+                         <br>
+
+                         <table align="center">
+                            <thead>
+                                <th>Test.No</th>
+                                <th>Test Name</th>
+                                <th>Result</th>
+                                <th>Flag</th>
+                                <th>REF.Range</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <br>
+                        <br>
+
+                        <p > 
+                            <h4>
+                                Signature   &nbsp  &nbsp : &nbsp.......................<br>
+                                Date  &nbsp  &nbsp : &nbsp ....................
+                            </h4>
+                        </p>
+                        </div>
+                    </div>
 		</div>
             </div>
         </div>
