@@ -136,7 +136,7 @@ html {
             
             <div class="column">
               <div class="card">
-                <img src="" alt="M D A Medhavi" style="width:100%">
+                <img src="Dewni.jpeg" alt="M D A Medhavi" style="width:100%">
                 <div class="container">
                   <h2>M D A Medhavi</h2>
                   <p class="title">Doctor</p>

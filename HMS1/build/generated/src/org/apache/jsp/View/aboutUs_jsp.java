@@ -175,7 +175,7 @@ public final class aboutUs_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            \n");
       out.write("            <div class=\"column\">\n");
       out.write("              <div class=\"card\">\n");
-      out.write("                <img src=\"\" alt=\"M D A Medhavi\" style=\"width:100%\">\n");
+      out.write("                <img src=\"Dewni.jpeg\" alt=\"M D A Medhavi\" style=\"width:100%\">\n");
       out.write("                <div class=\"container\">\n");
       out.write("                  <h2>M D A Medhavi</h2>\n");
       out.write("                  <p class=\"title\">Doctor</p>\n");
