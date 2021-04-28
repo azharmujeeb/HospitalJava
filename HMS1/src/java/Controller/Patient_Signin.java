@@ -5,7 +5,6 @@
  */
 package Controller;
 
-import Model.DoctorSigninModel;
 import Model.PatientLoginDao;
 import java.io.IOException;
 import java.io.PrintWriter;
