@@ -1,0 +1,4 @@
+Project is in HMS1 folder
+
+GitHub link:
+https://github.com/azharmujeeb/HospitalJava.git
