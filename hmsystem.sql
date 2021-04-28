@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 25, 2021 at 01:18 PM
+-- Generation Time: Apr 28, 2021 at 03:10 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -44,8 +44,28 @@ CREATE TABLE `appointment` (
 --
 
 INSERT INTO `appointment` (`loginid`, `fullname`, `age`, `mobilenumber`, `bloodgroup`, `typeofsickness`, `appointmentdate`, `appointmnettime`) VALUES
-('10707284', 'Mujeeb', '21', '0770833300', 'O+', 'Cold', '2021-04-29', '20:09:00'),
-('10707351', 'Disini', '18', '0771231234', 'AB+', 'Flu', '2021-04-27', '18:08:00');
+('10707284', 'Jabbar Azhar Mujeeb', '21', '0754567113', 'O+', 'allergies', '2021-04-28', '00:00:16'),
+('10707351', 'Disini', '21', '0771231234', 'AB+', 'diarrhea', '2021-04-28', '00:00:19');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `billing`
+--
+
+CREATE TABLE `billing` (
+  `daysstayed` varchar(225) NOT NULL,
+  `typeofroom` varchar(225) NOT NULL,
+  `medicinefees` varchar(225) NOT NULL,
+  `patientname` varchar(225) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `billing`
+--
+
+INSERT INTO `billing` (`daysstayed`, `typeofroom`, `medicinefees`, `patientname`) VALUES
+('3', 'VIP Room', '200', 'Mujeeb');
 
 -- --------------------------------------------------------
 
@@ -62,9 +82,9 @@ CREATE TABLE `doctor` (
   `mobilenumber` varchar(225) NOT NULL,
   `gender` varchar(225) NOT NULL,
   `martialstatus` varchar(225) NOT NULL,
-  `dateofbirth` date NOT NULL,
+  `dateofbirth` varchar(225) NOT NULL,
   `qualification` varchar(225) NOT NULL,
-  `datajoined` date NOT NULL
+  `datajoined` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -72,7 +92,10 @@ CREATE TABLE `doctor` (
 --
 
 INSERT INTO `doctor` (`fullname`, `loginid`, `password`, `address`, `age`, `mobilenumber`, `gender`, `martialstatus`, `dateofbirth`, `qualification`, `datajoined`) VALUES
-('Mujeeb', '10026155', 'Azhar1234', 'Kuwait', '21', '0770833300', 'Male', 'Single', '2021-04-06', 'SE', '2021-04-13');
+('M D A Medhavi', '10707000', 'Dewni1234', 'India', '22', '+9412312341', 'Female', 'Married', '1999-01-03', 'Dentist', '2021-03-20'),
+('I N Samarawickrame', '10707001', 'Irusha1234', 'Sri Lanka', '19', '0771234567', 'Male', 'Single', '2002-04-29', 'SE', '2021-03-25'),
+('Irusha', '10707284', 'Irusha1234', '43/1, Ampara Road, Paddiyadipitty, Akkaraipattu', '21', '0754567113', 'O+', 'Single', 'Male', 'SE', '0000-00-00'),
+('G M D D Ratnayake', '10707351', 'Disini1234', 'Katunayake, Sri Lanka', '18', '0760534989', 'Female', 'Single', '2003-01-03', 'Doctor', '2021-04-20');
 
 -- --------------------------------------------------------
 
@@ -86,6 +109,13 @@ CREATE TABLE `feedback` (
   `phone` varchar(225) NOT NULL,
   `comments` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`name`, `email`, `phone`, `comments`) VALUES
+('Smith', 'smith123@gmail.com', '0771231234', 'Hello');
 
 -- --------------------------------------------------------
 
@@ -103,9 +133,17 @@ CREATE TABLE `patient` (
   `bloodgroup` varchar(225) NOT NULL,
   `martialstatus` varchar(225) NOT NULL,
   `gender` varchar(225) NOT NULL,
-  `dateofbirth` date NOT NULL,
+  `dateofbirth` varchar(225) NOT NULL,
   `deceased` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `patient`
+--
+
+INSERT INTO `patient` (`fullname`, `loginid`, `password`, `address`, `age`, `mobilenumber`, `bloodgroup`, `martialstatus`, `gender`, `dateofbirth`, `deceased`) VALUES
+('Mujeeb', '10026155', 'a251', 'sri lanka', '21', '075467113', 'O+', 'S', 'M', '', ''),
+('Silham', 'psilham', 'silham1234', 'Sri Lanka', '24', '0756123802', 'AB+', 'Single', 'Male', '', '');
 
 -- --------------------------------------------------------
 
@@ -118,8 +156,15 @@ CREATE TABLE `room` (
   `doctorname` varchar(225) NOT NULL,
   `typeofsickness` varchar(225) NOT NULL,
   `typeofroom` varchar(225) NOT NULL,
-  `roomjoined` date NOT NULL
+  `roomjoined` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `room`
+--
+
+INSERT INTO `room` (`patientname`, `doctorname`, `typeofsickness`, `typeofroom`, `roomjoined`) VALUES
+('Silham', 'I N Samarawickrame', 'conjuctivitis', 'normal', '2021-04-20');
 
 --
 -- Indexes for dumped tables
@@ -130,6 +175,12 @@ CREATE TABLE `room` (
 --
 ALTER TABLE `appointment`
   ADD PRIMARY KEY (`loginid`);
+
+--
+-- Indexes for table `billing`
+--
+ALTER TABLE `billing`
+  ADD PRIMARY KEY (`patientname`);
 
 --
 -- Indexes for table `doctor`
