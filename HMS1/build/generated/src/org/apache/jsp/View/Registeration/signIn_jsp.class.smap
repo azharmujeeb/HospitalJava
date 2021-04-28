@@ -1,0 +1,12 @@
+SMAP
+signIn_jsp.java
+JSP
+*S JSP
+*F
++ 0 signIn.jsp
+View/Registeration/signIn.jsp
+*L
+1,78:44
+79:122,3
+80,12:125
+*E

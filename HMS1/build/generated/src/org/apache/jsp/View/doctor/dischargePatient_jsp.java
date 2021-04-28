@@ -213,9 +213,9 @@ public final class dischargePatient_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                            <h1>Discharge Patient</h1>\n");
       out.write("                            <form method=\"post\" action=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("/\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" id=\"loginId\" placeholder=\"Login ID\">\n");
-      out.write("                                <button type=\"button\" id=\"dischargePatient\" class=\"signup-btn\">Discharge Patient</button>\n");
+      out.write("/Discharge_Patient\">\n");
+      out.write("                                <input type=\"text\" class=\"input-box\" name=\"loginid\" placeholder=\"Login ID\">\n");
+      out.write("                                <button type=\"submit\" id=\"dischargePatient\" class=\"signup-btn\">Discharge Patient</button>\n");
       out.write("                            </form>\n");
       out.write("                        </div>\n");
       out.write("                    </div>\n");

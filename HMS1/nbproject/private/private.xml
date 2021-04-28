@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/patient/viewAppoinment.jsp</file>
-            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/doctorInfo.jsp</file>
-            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/viewAppointment.jsp</file>
-            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/receptionist/addDoctor.jsp</file>
+            <file>file:/E:/GitHub/HospitalJava/HMS1/web/View/doctor/updateProfile.jsp</file>
         </group>
     </open-files>
 </project-private>

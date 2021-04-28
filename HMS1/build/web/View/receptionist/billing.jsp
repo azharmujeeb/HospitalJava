@@ -188,7 +188,7 @@ hr {
                             <h1>Billing</h1>
                             <form method="post" action="${pageContext.request.contextPath}/Add_Bill">
                                 <div>
-                                    <select class="input-box" style="padding-left:120px;">
+                                    <select class="input-box" name="patientname" style="padding-left:120px;">
                                     <option>Select Patient Name</option>
                                     <%
                                         try {
@@ -210,10 +210,15 @@ hr {
                                 </select>
                                 </div>
                                 <hr>
-                                <input type="number" class="input-box" name="daysstayed" placeholder="Number of Days Stayed">
-                                <input type="text" class="input-box" name="roomtype" placeholder="Room Type">
-                                <input type="number" class="input-box" name="medicinefees" placeholder="Medicine Fees">
-                                <button type="button" id="doneBilling" class="signup-btn">Bill</button>
+                                <input type="daysstayed" class="input-box" name="daysstayed" placeholder="Number of Days Stayed">
+                                <select name="typeofroom" id="typeOfRom" placeholder="Type Of Room" class="input-box" style="padding-left :140px; color: black;">
+                                    <option>Type Of Room</option>
+                                    <option value="VIP Room">VIP Room</option>
+                                    <option value="Normal Room">Normal Room</option>
+                                    <option value="Double Room">Double Room</option>
+                                </select>
+                                <input type="medicinefees" class="input-box" name="medicinefees" placeholder="Medicine Fees">
+                                <button type="submit" id="doneBilling" class="signup-btn">Bill</button>
                             </form>
 			</div>
                     </div>
