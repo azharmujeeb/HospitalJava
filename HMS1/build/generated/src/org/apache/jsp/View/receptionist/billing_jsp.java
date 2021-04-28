@@ -229,9 +229,11 @@ public final class billing_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <div class=\"info\">\n");
       out.write("\t\t\t<div class=\"sign-up-form\">\n");
       out.write("                            <h1>Billing</h1>\n");
-      out.write("                            <form method=\"post\" action=\"\">\n");
+      out.write("                            <form method=\"post\" action=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${pageContext.request.contextPath}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("/Add_Bill\">\n");
       out.write("                                <div>\n");
-      out.write("                                    <select>\n");
+      out.write("                                    <select class=\"input-box\" name=\"patientname\" style=\"padding-left:120px;\">\n");
       out.write("                                    <option>Select Patient Name</option>\n");
       out.write("                                    ");
 
@@ -259,10 +261,15 @@ public final class billing_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                </select>\n");
       out.write("                                </div>\n");
       out.write("                                <hr>\n");
-      out.write("                                <input type=\"number\" class=\"input-box\" name=\"daysstayed\" placeholder=\"Number of Days Stayed\">\n");
-      out.write("                                <input type=\"text\" class=\"input-box\" name=\"roomtype\" placeholder=\"Room Type\">\n");
-      out.write("                                <input type=\"number\" class=\"input-box\" name=\"medicinefees\" placeholder=\"Medicine Fees\">\n");
-      out.write("                                <button type=\"button\" id=\"doneBilling\" class=\"signup-btn\">Bill</button>\n");
+      out.write("                                <input type=\"daysstayed\" class=\"input-box\" name=\"daysstayed\" placeholder=\"Number of Days Stayed\">\n");
+      out.write("                                <select name=\"typeofroom\" id=\"typeOfRom\" placeholder=\"Type Of Room\" class=\"input-box\" style=\"padding-left :140px; color: black;\">\n");
+      out.write("                                    <option>Type Of Room</option>\n");
+      out.write("                                    <option value=\"VIP Room\">VIP Room</option>\n");
+      out.write("                                    <option value=\"Normal Room\">Normal Room</option>\n");
+      out.write("                                    <option value=\"Double Room\">Double Room</option>\n");
+      out.write("                                </select>\n");
+      out.write("                                <input type=\"medicinefees\" class=\"input-box\" name=\"medicinefees\" placeholder=\"Medicine Fees\">\n");
+      out.write("                                <button type=\"submit\" id=\"doneBilling\" class=\"signup-btn\">Bill</button>\n");
       out.write("                            </form>\n");
       out.write("\t\t\t</div>\n");
       out.write("                    </div>\n");
