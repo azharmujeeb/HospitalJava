@@ -203,7 +203,7 @@ public final class cancelAppointment_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\t\t\t\t<li><a href=\"appointment.jsp\"><i class=\"fas fa-book-medical\"></i>Book Appointment</a></li>\n");
       out.write("                                <li><a href=\"cancelAppointment.jsp\"><i class=\"fas fa-window-close\"></i>Cancel Appointment</a></li>\n");
       out.write("                                <li><a href=\"feedback.jsp\"><i class=\"fas fa-comments\"></i>Feedback</a></li>\n");
-      out.write("\t\t\t</ul>\n");
+      out.write("                    </ul>\n");
       out.write("\t\t</div>\n");
       out.write("\t\t<div class=\"main_content\">\n");
       out.write("                    <div class=\"info\">\n");
